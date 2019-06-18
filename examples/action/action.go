@@ -18,6 +18,7 @@ type ActionFactory struct {
 }
 
 func (f *ActionFactory) Initialize(ctx action.InitContext) error {
+	log.RootLogger().Debugf("ActionFactory Initialize")
 	return nil
 }
 

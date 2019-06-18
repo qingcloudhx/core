@@ -27,6 +27,7 @@ func New(config *Config, runner action.Runner, options ...Option) (*App, error) 
 
 	app := &App{stopOnError: true, name: config.Name, version: config.Version}
 
+	//todo add app import pkg
 	for _, anImport := range config.Imports {
 		matches := flogoImportPattern.FindStringSubmatch(anImport)
 		err := registerImport(matches[1] + matches[3] + matches[5]) // alias + module path + relative import path
@@ -35,6 +36,7 @@ func New(config *Config, runner action.Runner, options ...Option) (*App, error) 
 		}
 	}
 
+	//todo func ??
 	function.ResolveAliases()
 
 	// register schemas, assumes appropriate schema factories have been registered
@@ -47,6 +49,7 @@ func New(config *Config, runner action.Runner, options ...Option) (*App, error) 
 
 	schema.ResolveSchemas()
 
+	//todo property parse
 	properties := make(map[string]interface{}, len(config.Properties))
 	for _, attr := range config.Properties {
 		properties[attr.Name()] = attr.Value()
@@ -61,16 +64,16 @@ func New(config *Config, runner action.Runner, options ...Option) (*App, error) 
 			return nil, err
 		}
 	}
-
-	resources := make(map[string]*resource.Resource, len(config.Resources))
-	app.resManager = resource.NewManager(resources)
-
+	//todo action
 	for _, actionFactory := range action.Factories() {
 		err := actionFactory.Initialize(app)
 		if err != nil {
 			return nil, err
 		}
 	}
+	//todo resource parse
+	resources := make(map[string]*resource.Resource, len(config.Resources))
+	app.resManager = resource.NewManager(resources)
 
 	for _, resConfig := range config.Resources {
 		resType, err := resource.GetTypeFromID(resConfig.ID)
@@ -89,6 +92,7 @@ func New(config *Config, runner action.Runner, options ...Option) (*App, error) 
 
 	var err error
 
+	//todo create actions
 	app.actions, err = app.createSharedActions(config.Actions)
 	if err != nil {
 		return nil, fmt.Errorf("error creating shared action instances - %s", err.Error())
