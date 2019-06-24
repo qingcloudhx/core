@@ -1,10 +1,10 @@
 package ast
 
 import (
+	"flogo/core/data"
+	"flogo/core/data/coerce"
+	"flogo/core/data/resolve"
 	"fmt"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/resolve"
 	"strings"
 )
 

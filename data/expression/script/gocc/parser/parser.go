@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	parseError "github.com/project-flogo/core/data/expression/script/gocc/errors"
-	"github.com/project-flogo/core/data/expression/script/gocc/token"
+	parseError "flogo/core/data/expression/script/gocc/errors"
+	"flogo/core/data/expression/script/gocc/token"
 )
 
 const (

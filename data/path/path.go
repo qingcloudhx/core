@@ -3,8 +3,8 @@ package path
 import (
 	"encoding/json"
 	"errors"
+	"flogo/core/data/coerce"
 	"fmt"
-	"github.com/project-flogo/core/data/coerce"
 	"reflect"
 	"strconv"
 	"strings"

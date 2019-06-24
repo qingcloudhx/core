@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/expression/script/gocc/token"
-	"github.com/project-flogo/core/data/resolve"
+	"flogo/core/data"
+	"flogo/core/data/coerce"
+	"flogo/core/data/expression/script/gocc/token"
+	"flogo/core/data/resolve"
 )
 
 func NewArithExpr(left, operand, right interface{}) (Expr, error) {

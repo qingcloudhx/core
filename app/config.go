@@ -1,11 +1,11 @@
 package app
 
 import (
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/app/resource"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/schema"
-	"github.com/project-flogo/core/trigger"
+	"flogo/core/action"
+	"flogo/core/app/resource"
+	"flogo/core/data"
+	"flogo/core/data/schema"
+	"flogo/core/trigger"
 )
 
 // Def is the configuration for the App

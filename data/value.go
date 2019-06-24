@@ -1,6 +1,6 @@
 package data
 
-import "github.com/project-flogo/core/data/schema"
+import "flogo/core/data/schema"
 
 type TypedValue interface {
 	Type() Type

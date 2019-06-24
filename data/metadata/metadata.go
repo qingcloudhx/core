@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/project-flogo/core/data"
+	"flogo/core/data"
 )
 
 //

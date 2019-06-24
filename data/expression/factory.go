@@ -3,7 +3,7 @@ package expression
 import (
 	"fmt"
 
-	"github.com/project-flogo/core/data/resolve"
+	"flogo/core/data/resolve"
 )
 
 var scriptFactoryCreator FactoryCreatorFunc

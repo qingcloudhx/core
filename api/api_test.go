@@ -2,8 +2,8 @@ package api
 
 import (
 	"context"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/data"
+	"flogo/core/support/log"
 	"testing"
 )
 

@@ -1,13 +1,13 @@
 package ast
 
 import (
+	"flogo/core/data"
+	"flogo/core/data/resolve"
 	"fmt"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/resolve"
 	"reflect"
 
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/expression/script/gocc/token"
+	"flogo/core/data/coerce"
+	"flogo/core/data/expression/script/gocc/token"
 )
 
 func NewUnaryExpr(operand, tok interface{}) (Expr, error) {

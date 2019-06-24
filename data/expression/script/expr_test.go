@@ -2,13 +2,13 @@ package script
 
 import (
 	"encoding/json"
+	"flogo/core/data/property"
 	"fmt"
-	"github.com/project-flogo/core/data/property"
 	"os"
 	"testing"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/resolve"
+	"flogo/core/data"
+	"flogo/core/data/resolve"
 	"github.com/stretchr/testify/assert"
 )
 

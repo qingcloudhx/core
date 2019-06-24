@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/project-flogo/core/data/property"
-	"github.com/project-flogo/core/engine/runner"
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/data/property"
+	"flogo/core/engine/runner"
+	"flogo/core/support/log"
 )
 
 const (

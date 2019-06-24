@@ -26,7 +26,7 @@ Project Flogo is an open source framework to simplify building efficient & moder
 Flogo Core is the core flogo library which contains the apis to create and extend Flogo applications.
 
 ## Getting started
-If you want to get started with [Project Flogo](flogo.io), you should install the install the [Flogo CLI](https://github.com/project-flogo/cli).  You can find details there on creating a quick sample application.  You also might want to check out the [getting started](https://tibcosoftware.github.io/flogo/getting-started/) guide in our docs or check out the [Labs](https://tibcosoftware.github.io/flogo/labs/) section in our docs for in depth tutorials.
+If you want to get started with [Project Flogo](flogo.io), you should install the install the [Flogo CLI](https://flogo/cli).  You can find details there on creating a quick sample application.  You also might want to check out the [getting started](https://tibcosoftware.github.io/flogo/getting-started/) guide in our docs or check out the [Labs](https://tibcosoftware.github.io/flogo/labs/) section in our docs for in depth tutorials.
 
 ## Documentation
 Here is some documentation to help you get started understanding some of the fundamentals of the Flogo Core library. 
@@ -45,11 +45,11 @@ Want to contribute to Project Flogo? We've made it easy, all you need to do is f
 
 Not sure where to start? No problem, you can browse the Project Flogo repos and look for issues tagged `kind/help-wanted` or `good first issue`. To make this even easier, we've added the links right here too!
 * Project Flogo: [kind/help-wanted](https://github.com/TIBCOSoftware/flogo/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/TIBCOSoftware/flogo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-* flogo cli: [kind/help-wanted](https://github.com/project-flogo/cli/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/project-flogo/cli/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-* flogo core: [kind/help-wanted](https://github.com/project-flogo/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/project-flogo/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-* flogo contrib: [kind/help-wanted](https://github.com/project-flogo/contrib/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/project-flogo/contrib/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+* flogo cli: [kind/help-wanted](https://flogo/cli/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://flogo/cli/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+* flogo core: [kind/help-wanted](https://flogo/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://flogo/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+* flogo contrib: [kind/help-wanted](https://flogo/contrib/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://flogo/contrib/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
-Another great way to contribute to Project Flogo is to check [flogo-contrib](https://github.com/project-flogo/contrib). That repository contains some basic contributions, such as activities, triggers, etc. Perhaps there is something missing? Create a new activity or trigger or fix a bug in an existing activity or trigger.
+Another great way to contribute to Project Flogo is to check [flogo-contrib](https://flogo/contrib). That repository contains some basic contributions, such as activities, triggers, etc. Perhaps there is something missing? Create a new activity or trigger or fix a bug in an existing activity or trigger.
 
 If you have any questions, feel free to post an issue and tag it as a question, email flogo-oss@tibco.com or chat with the team and community:
 
@@ -59,4 +59,4 @@ If you have any questions, feel free to post an issue and tag it as a question, 
 For additional details, refer to the [Contribution Guidelines](https://github.com/TIBCOSoftware/flogo/blob/master/CONTRIBUTING.md).
 
 ## License 
-Flogo source code in [this](https://github.com/project-flogo/core) repository is under a BSD-style license, refer to [LICENSE](https://github.com/project-flogo/core/blob/master/LICENSE) 
+Flogo source code in [this](https://flogo/core) repository is under a BSD-style license, refer to [LICENSE](https://flogo/core/blob/master/LICENSE) 

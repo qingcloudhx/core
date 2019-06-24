@@ -4,7 +4,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/support/log"
 )
 
 var emitters = make(map[string]*Emitter)

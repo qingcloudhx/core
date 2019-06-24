@@ -2,19 +2,19 @@ package api
 
 import (
 	"context"
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/support/log"
 	"reflect"
 	"strconv"
 	"strings"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/app"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/trigger"
+	"flogo/core/action"
+	"flogo/core/activity"
+	"flogo/core/app"
+	"flogo/core/data"
+	"flogo/core/data/mapper"
+	"flogo/core/data/metadata"
+	"flogo/core/support"
+	"flogo/core/trigger"
 )
 
 // toAppConfig converts an App to the core app configuration model

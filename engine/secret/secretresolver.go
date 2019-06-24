@@ -40,7 +40,7 @@ func GetDataSecretKey() string {
 
 // Get secret value handler. If not already set by SetSecretValueHandler(), will return default KeyBasedSecretValueDecoder
 // where decoding key value is expected to be set through FLOGO_DATA_SECRET_KEY environment variable.
-// If key is not set, a default key value(github.com/project-flogo/core/config.DATA_SECRET_KEY_DEFAULT) will be used.
+// If key is not set, a default key value(flogo/core/config.DATA_SECRET_KEY_DEFAULT) will be used.
 func GetSecretValueHandler() SecretValueHandler {
 	if secretValueHandler == nil {
 		secretValueHandler = &KeyBasedSecretValueHandler{Key: GetDataSecretKey()}

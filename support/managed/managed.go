@@ -1,8 +1,8 @@
 package managed
 
 import (
+	"flogo/core/support/log"
 	"fmt"
-	"github.com/project-flogo/core/support/log"
 )
 
 // Managed is an interface that is implemented by an object that needs to be

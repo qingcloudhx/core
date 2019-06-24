@@ -2,13 +2,13 @@ package engine
 
 import (
 	"encoding/json"
-	"github.com/project-flogo/core/data/schema"
+	"flogo/core/data/schema"
 	"io/ioutil"
 	"os"
 
-	"github.com/project-flogo/core/app"
-	"github.com/project-flogo/core/engine/secret"
-	"github.com/project-flogo/core/support"
+	"flogo/core/app"
+	"flogo/core/engine/secret"
+	"flogo/core/support"
 )
 
 var appName, appVersion string

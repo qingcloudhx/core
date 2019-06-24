@@ -16,15 +16,15 @@ Sections:
 The imports section allows one to define all the packages that should be imported by the engine.  This includes go code and references to contribution.
 ```json
   "imports": [
-    "github.com/project-flogo/flow",
-    "github.com/project-flogo/contrib/trigger/rest",
-    "github.com/project-flogo/contrib/activity/log"
+    "flogo/flow",
+    "flogo/contrib/trigger/rest",
+    "flogo/contrib/activity/log"
   ],
 ```
 
 A contribution can be referenced directly using the full go package or indirectly to its imported package.
 
-Direct: `"ref" : "github.com/project-flogo/flow"`
+Direct: `"ref" : "flogo/flow"`
  
 Indirect: `"ref" : "#flow"` 
 
@@ -55,7 +55,7 @@ The channels section allows one to define internal communications channels for t
 ```
 A channel is used for internal communications in an engine.  It is defined by a channel name and buffer size. 
 
-The `github.com/project-flogo/contrib/activity/channel` activity can be used to put a message on the channel.  The `github.com/project-flogo/contrib/trigger/channel` trigger can be used to listen on a channel and trigger actions from messages received on that channel.
+The `flogo/contrib/activity/channel` activity can be used to put a message on the channel.  The `flogo/contrib/trigger/channel` trigger can be used to listen on a channel and trigger actions from messages received on that channel.
 
 ## Triggers
 The triggers section is used to define the triggers that will be used by the application.
@@ -202,9 +202,9 @@ Sample flogo application coniguration file.
   "appModel": "1.0.0",
   "description": "My flogo application description",
   "imports": [
-    "github.com/project-flogo/flow",
-    "github.com/project-flogo/contrib/trigger/rest",
-    "github.com/project-flogo/contrib/activity/log"
+    "flogo/flow",
+    "flogo/contrib/trigger/rest",
+    "flogo/contrib/activity/log"
   ],
   "triggers": [
     {

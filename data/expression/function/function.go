@@ -1,9 +1,9 @@
 package function
 
 import (
+	"flogo/core/data"
+	"flogo/core/data/coerce"
 	"fmt"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
 )
 
 type Function interface {

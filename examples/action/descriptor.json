@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "title": "Simple Action",
   "description": "Sample Action",
-  "homepage": "https://github.com/project-flogo/tree/master/examples/action",
+  "homepage": "https://flogo/tree/master/examples/action",
   "settings": [
     {
       "name": "aSetting",

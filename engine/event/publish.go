@@ -4,7 +4,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/support/log"
 )
 
 const (

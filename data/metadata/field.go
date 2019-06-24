@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
+	"flogo/core/data"
+	"flogo/core/data/coerce"
 )
 
 type FieldDetails struct {

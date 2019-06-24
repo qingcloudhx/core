@@ -7,7 +7,7 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/support/log"
 )
 
 // HandlePanic helper method to handle panics

@@ -1,15 +1,15 @@
 package app
 
 import (
+	"flogo/core/action"
+	"flogo/core/data/expression"
+	"flogo/core/data/mapper"
+	"flogo/core/data/resolve"
+	"flogo/core/support"
+	"flogo/core/support/log"
+	"flogo/core/support/managed"
+	"flogo/core/trigger"
 	"fmt"
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/managed"
-	"github.com/project-flogo/core/trigger"
 )
 
 func (a *App) createSharedActions(actionConfigs []*action.Config) (map[string]action.Action, error) {

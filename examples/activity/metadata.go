@@ -1,6 +1,6 @@
 package sample
 
-import "github.com/project-flogo/core/data/coerce"
+import "flogo/core/data/coerce"
 
 type Settings struct {
 	ASetting string `md:"aSetting,required"`

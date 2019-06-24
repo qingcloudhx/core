@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/project-flogo/core/data"
+	"flogo/core/data"
 )
 
 func init() {

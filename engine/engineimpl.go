@@ -1,18 +1,18 @@
 package engine
 
 import (
+	"flogo/core/data/property"
 	"fmt"
-	"github.com/project-flogo/core/data/property"
 	"strings"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/app"
-	"github.com/project-flogo/core/engine/channels"
-	"github.com/project-flogo/core/engine/runner"
-	"github.com/project-flogo/core/engine/secret"
-	"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/managed"
+	"flogo/core/action"
+	"flogo/core/app"
+	"flogo/core/engine/channels"
+	"flogo/core/engine/runner"
+	"flogo/core/engine/secret"
+	"flogo/core/support"
+	"flogo/core/support/log"
+	"flogo/core/support/managed"
 )
 
 // engineImpl is the type for the Default Engine Implementation

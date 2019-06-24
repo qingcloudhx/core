@@ -7,16 +7,16 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/app/resource"
-	"github.com/project-flogo/core/data/expression/function"
-	"github.com/project-flogo/core/data/property"
-	"github.com/project-flogo/core/data/schema"
-	"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/managed"
-	"github.com/project-flogo/core/trigger"
+	"flogo/core/action"
+	"flogo/core/activity"
+	"flogo/core/app/resource"
+	"flogo/core/data/expression/function"
+	"flogo/core/data/property"
+	"flogo/core/data/schema"
+	"flogo/core/support"
+	"flogo/core/support/log"
+	"flogo/core/support/managed"
+	"flogo/core/trigger"
 )
 
 type Option func(*App) error

@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
+	"flogo/core/data"
+	"flogo/core/data/coerce"
 )
 
 func IsTemplateExpr(exprStr string) bool {

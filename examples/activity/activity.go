@@ -1,8 +1,8 @@
 package sample
 
 import (
-	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/data/metadata"
+	"flogo/core/activity"
+	"flogo/core/data/metadata"
 )
 
 func init() {

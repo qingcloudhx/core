@@ -3,9 +3,9 @@ package app
 import (
 	"fmt"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/data"
+	"flogo/core/data/resolve"
+	"flogo/core/support/log"
 )
 
 var appData = data.NewSimpleSyncScope(nil, nil)

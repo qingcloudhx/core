@@ -5,8 +5,8 @@ import (
 	"crypto/x509"
 	"io/ioutil"
 
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/data/coerce"
+	"flogo/core/support/log"
 )
 
 const ConfigSchema = `

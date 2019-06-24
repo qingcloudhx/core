@@ -2,12 +2,12 @@ package script
 
 import (
 	"bytes"
+	"flogo/core/data/resolve"
 	"fmt"
-	"github.com/project-flogo/core/data/resolve"
 	"testing"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/expression/function"
+	"flogo/core/data"
+	"flogo/core/data/expression/function"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -3,9 +3,9 @@ package main
 import (
 	"os"
 
-	_ "github.com/project-flogo/core/data/expression/script"
-	"github.com/project-flogo/core/engine"
-	"github.com/project-flogo/core/support/log"
+	_ "flogo/core/data/expression/script"
+	"flogo/core/engine"
+	"flogo/core/support/log"
 )
 
 var (

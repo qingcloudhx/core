@@ -4,14 +4,14 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/engine/runner"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/trigger"
+	"flogo/core/action"
+	"flogo/core/data/expression"
+	"flogo/core/data/mapper"
+	"flogo/core/data/metadata"
+	"flogo/core/data/resolve"
+	"flogo/core/engine/runner"
+	"flogo/core/support/log"
+	"flogo/core/trigger"
 )
 
 func InitTrigger(factory trigger.Factory, tConfig *trigger.Config, actions map[string]action.Action) (trigger.Trigger, error) {

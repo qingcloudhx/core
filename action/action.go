@@ -3,8 +3,8 @@ package action
 import (
 	"context"
 
-	"github.com/project-flogo/core/app/resource"
-	"github.com/project-flogo/core/data/metadata"
+	"flogo/core/app/resource"
+	"flogo/core/data/metadata"
 )
 
 // Action is an action to perform as a result of a trigger

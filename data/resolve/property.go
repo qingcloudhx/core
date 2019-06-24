@@ -1,10 +1,10 @@
 package resolve
 
 import (
+	"flogo/core/data/property"
 	"fmt"
-	"github.com/project-flogo/core/data/property"
 
-	"github.com/project-flogo/core/data"
+	"flogo/core/data"
 )
 
 var propertyResolverInfo = NewResolverInfo(true, true)

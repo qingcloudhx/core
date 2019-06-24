@@ -1,12 +1,12 @@
 package test
 
 import (
-	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/activity"
+	"flogo/core/data"
+	"flogo/core/data/mapper"
+	"flogo/core/data/metadata"
+	"flogo/core/data/resolve"
+	"flogo/core/support/log"
 )
 
 var logger = log.ChildLogger(log.RootLogger(), "test")
@@ -19,7 +19,7 @@ func NewActivityContext(md *activity.Metadata) *TestActivityContext {
 
 	ac := &TestActivityHost{
 		HostId:     "1",
-		HostRef:    "github.com/project-flogo/flow",
+		HostRef:    "flogo/flow",
 		IoMetadata: &metadata.IOMetadata{Input: input, Output: output},
 		HostData:   data.NewSimpleScope(nil, nil),
 	}

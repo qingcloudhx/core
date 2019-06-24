@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"path"
 
-	"github.com/project-flogo/core/support/log"
+	"flogo/core/support/log"
 )
 
 type void struct{}

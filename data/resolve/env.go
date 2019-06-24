@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/project-flogo/core/data"
+	"flogo/core/data"
 )
 
 var envResolverInfo = NewResolverInfo(true, true)

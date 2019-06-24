@@ -2,11 +2,11 @@ package ast
 
 import (
 	"encoding/json"
+	"flogo/core/data"
+	"flogo/core/data/coerce"
+	"flogo/core/data/expression/script/gocc/token"
+	"flogo/core/data/resolve"
 	"fmt"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/expression/script/gocc/token"
-	"github.com/project-flogo/core/data/resolve"
 	"reflect"
 	"strings"
 )

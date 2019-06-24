@@ -1,10 +1,10 @@
 package action
 
 import (
+	"flogo/core/support/log"
 	"fmt"
-	"github.com/project-flogo/core/support/log"
 
-	"github.com/project-flogo/core/support"
+	"flogo/core/support"
 )
 
 var (
@@ -60,7 +60,7 @@ func GetFactory(ref string) Factory {
 
 	//temp hack
 	if ref == "github.com/TIBCOSoftware/flogo-contrib/action/flow" {
-		ref = "github.com/project-flogo/flow"
+		ref = "flogo/flow"
 	}
 
 	return actionFactories[ref]

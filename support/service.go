@@ -4,7 +4,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/project-flogo/core/support/managed"
+	"flogo/core/support/managed"
 )
 
 // Service is an interface for defining/managing a service

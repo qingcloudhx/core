@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/project-flogo/core/app/resource"
+	"flogo/core/app/resource"
 )
 
 func NewActionInitCtx() *ActionInitCtx {

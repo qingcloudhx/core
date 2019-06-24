@@ -1,7 +1,7 @@
 package sample
 
 import (
-	"github.com/project-flogo/core/data/coerce"
+	"flogo/core/data/coerce"
 )
 
 type Settings struct {

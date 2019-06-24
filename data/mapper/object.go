@@ -1,12 +1,12 @@
 package mapper
 
 import (
+	"flogo/core/data"
+	"flogo/core/data/coerce"
+	"flogo/core/data/expression"
+	"flogo/core/data/path"
+	"flogo/core/support/log"
 	"fmt"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/path"
-	"github.com/project-flogo/core/support/log"
 	"reflect"
 	"runtime/debug"
 	"strings"
