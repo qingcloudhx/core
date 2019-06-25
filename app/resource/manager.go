@@ -4,8 +4,8 @@ import (
 	"errors"
 	"strings"
 
-	"flogo/core/support"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/support"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 const UriScheme = "res://"

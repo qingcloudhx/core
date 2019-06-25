@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"flogo/core/data"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 //DEPRECATED

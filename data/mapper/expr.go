@@ -1,10 +1,10 @@
 package mapper
 
 import (
-	"flogo/core/data"
-	"flogo/core/data/expression"
-	"flogo/core/data/resolve"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/expression"
+	"github.com/qingcloudhx/core/data/resolve"
+	"github.com/qingcloudhx/core/support/log"
 	"strings"
 )
 

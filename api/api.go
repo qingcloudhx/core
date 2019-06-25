@@ -6,16 +6,16 @@ import (
 	"fmt"
 	"reflect"
 
-	"flogo/core/action"
-	"flogo/core/app"
-	"flogo/core/app/resource"
-	"flogo/core/data"
-	"flogo/core/data/coerce"
-	"flogo/core/data/metadata"
-	"flogo/core/engine"
-	"flogo/core/engine/runner"
-	"flogo/core/support"
-	"flogo/core/trigger"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/app"
+	"github.com/qingcloudhx/core/app/resource"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/coerce"
+	"github.com/qingcloudhx/core/data/metadata"
+	"github.com/qingcloudhx/core/engine"
+	"github.com/qingcloudhx/core/engine/runner"
+	"github.com/qingcloudhx/core/support"
+	"github.com/qingcloudhx/core/trigger"
 )
 
 // App is the structure that defines an application

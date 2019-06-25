@@ -1,9 +1,9 @@
 package function
 
 import (
-	"flogo/core/data"
-	"flogo/core/data/coerce"
 	"fmt"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/coerce"
 )
 
 type Function interface {

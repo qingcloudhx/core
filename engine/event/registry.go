@@ -4,7 +4,7 @@ import (
 	"errors"
 	"sync"
 
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 var emitters = make(map[string]*Emitter)

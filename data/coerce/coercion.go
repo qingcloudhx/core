@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"flogo/core/data"
+	"github.com/qingcloudhx/core/data"
 )
 
 func init() {

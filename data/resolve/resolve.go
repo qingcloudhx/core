@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"flogo/core/data"
+	"github.com/qingcloudhx/core/data"
 )
 
 // Resolver is for resolving a value for a specific environment or construct, ex. OS environment

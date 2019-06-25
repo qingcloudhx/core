@@ -1,18 +1,18 @@
 package engine
 
 import (
-	"flogo/core/data/property"
 	"fmt"
+	"github.com/qingcloudhx/core/data/property"
 	"strings"
 
-	"flogo/core/action"
-	"flogo/core/app"
-	"flogo/core/engine/channels"
-	"flogo/core/engine/runner"
-	"flogo/core/engine/secret"
-	"flogo/core/support"
-	"flogo/core/support/log"
-	"flogo/core/support/managed"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/app"
+	"github.com/qingcloudhx/core/engine/channels"
+	"github.com/qingcloudhx/core/engine/runner"
+	"github.com/qingcloudhx/core/engine/secret"
+	"github.com/qingcloudhx/core/support"
+	"github.com/qingcloudhx/core/support/log"
+	"github.com/qingcloudhx/core/support/managed"
 )
 
 // engineImpl is the type for the Default Engine Implementation

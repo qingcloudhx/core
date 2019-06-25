@@ -3,7 +3,7 @@ package trigger
 import (
 	"testing"
 
-	"flogo/core/action"
+	"github.com/qingcloudhx/core/action"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -78,7 +78,7 @@ func TestAddFactoryDuplicated(t *testing.T) {
 	// Register factory: this time should fail, duplicated
 	err = Register(&MockTrigger{}, f)
 	assert.NotNil(t, err)
-	assert.Equal(t, "trigger already registered for ref flogo/core/trigger", err.Error())
+	assert.Equal(t, "trigger already registered for ref github.com/qingcloudhx/core/trigger", err.Error())
 }
 
 //TestAddFactoryOk

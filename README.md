@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="https://travis-ci.org/project-flogo/core.svg?branch=master"/>
+  <img src="https://travis-ci.org/project-github.com/qingcloudhx/core.svg?branch=master"/>
   <img src="https://img.shields.io/badge/dependencies-up%20to%20date-green.svg"/>
   <img src="https://img.shields.io/badge/license-BSD%20style-blue.svg"/>
   <a href="https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link"><img src="https://badges.gitter.im/Join%20Chat.svg"/></a>
@@ -46,7 +46,7 @@ Want to contribute to Project Flogo? We've made it easy, all you need to do is f
 Not sure where to start? No problem, you can browse the Project Flogo repos and look for issues tagged `kind/help-wanted` or `good first issue`. To make this even easier, we've added the links right here too!
 * Project Flogo: [kind/help-wanted](https://github.com/TIBCOSoftware/flogo/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/TIBCOSoftware/flogo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * flogo cli: [kind/help-wanted](https://flogo/cli/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://flogo/cli/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-* flogo core: [kind/help-wanted](https://flogo/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://flogo/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+* flogo core: [kind/help-wanted](https://github.com/qingcloudhx/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/qingcloudhx/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * flogo contrib: [kind/help-wanted](https://flogo/contrib/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://flogo/contrib/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
 Another great way to contribute to Project Flogo is to check [flogo-contrib](https://flogo/contrib). That repository contains some basic contributions, such as activities, triggers, etc. Perhaps there is something missing? Create a new activity or trigger or fix a bug in an existing activity or trigger.
@@ -59,4 +59,4 @@ If you have any questions, feel free to post an issue and tag it as a question, 
 For additional details, refer to the [Contribution Guidelines](https://github.com/TIBCOSoftware/flogo/blob/master/CONTRIBUTING.md).
 
 ## License 
-Flogo source code in [this](https://flogo/core) repository is under a BSD-style license, refer to [LICENSE](https://flogo/core/blob/master/LICENSE) 
+Flogo source code in [this](https://github.com/qingcloudhx/core) repository is under a BSD-style license, refer to [LICENSE](https://github.com/qingcloudhx/core/blob/master/LICENSE) 

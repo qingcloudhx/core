@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"flogo/core/data/metadata"
+	"github.com/qingcloudhx/core/data/metadata"
 
-	"flogo/core/data"
+	"github.com/qingcloudhx/core/data"
 	"github.com/stretchr/testify/assert"
 )
 

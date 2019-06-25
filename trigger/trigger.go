@@ -1,8 +1,8 @@
 package trigger
 
 import (
-	"flogo/core/support/log"
-	"flogo/core/support/managed"
+	"github.com/qingcloudhx/core/support/log"
+	"github.com/qingcloudhx/core/support/managed"
 )
 
 // Trigger is object that triggers/starts flow instances and

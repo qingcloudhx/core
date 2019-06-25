@@ -1,8 +1,8 @@
 package ast
 
 import (
-	"flogo/core/data/expression/script/gocc/token"
 	"fmt"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/token"
 )
 
 func Concat(items ...interface{}) ([]interface{}, error) {

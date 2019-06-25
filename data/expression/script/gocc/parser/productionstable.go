@@ -2,7 +2,7 @@
 
 package parser
 
-import "flogo/core/data/expression/script/gocc/ast"
+import "github.com/qingcloudhx/core/data/expression/script/gocc/ast"
 
 type (
 	//TODO: change type and variable names to be consistent with other tables

@@ -2,19 +2,19 @@ package api
 
 import (
 	"context"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/support/log"
 	"reflect"
 	"strconv"
 	"strings"
 
-	"flogo/core/action"
-	"flogo/core/activity"
-	"flogo/core/app"
-	"flogo/core/data"
-	"flogo/core/data/mapper"
-	"flogo/core/data/metadata"
-	"flogo/core/support"
-	"flogo/core/trigger"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/activity"
+	"github.com/qingcloudhx/core/app"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/mapper"
+	"github.com/qingcloudhx/core/data/metadata"
+	"github.com/qingcloudhx/core/support"
+	"github.com/qingcloudhx/core/trigger"
 )
 
 // toAppConfig converts an App to the core app configuration model

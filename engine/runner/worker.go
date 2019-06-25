@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"flogo/core/action"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 // Based off: http://nesv.github.io/golang/2014/02/25/worker-queues-in-go.html

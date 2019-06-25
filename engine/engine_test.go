@@ -3,7 +3,7 @@ package engine
 import (
 	"testing"
 
-	"flogo/core/app"
+	"github.com/qingcloudhx/core/app"
 	"github.com/stretchr/testify/assert"
 )
 

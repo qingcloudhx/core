@@ -1,6 +1,6 @@
 package data
 
-import "flogo/core/data/schema"
+import "github.com/qingcloudhx/core/data/schema"
 
 type TypedValue interface {
 	Type() Type

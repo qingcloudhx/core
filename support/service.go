@@ -4,7 +4,7 @@ import (
 	"errors"
 	"sync"
 
-	"flogo/core/support/managed"
+	"github.com/qingcloudhx/core/support/managed"
 )
 
 // Service is an interface for defining/managing a service

@@ -7,16 +7,16 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"flogo/core/action"
-	"flogo/core/activity"
-	"flogo/core/app/resource"
-	"flogo/core/data/expression/function"
-	"flogo/core/data/property"
-	"flogo/core/data/schema"
-	"flogo/core/support"
-	"flogo/core/support/log"
-	"flogo/core/support/managed"
-	"flogo/core/trigger"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/activity"
+	"github.com/qingcloudhx/core/app/resource"
+	"github.com/qingcloudhx/core/data/expression/function"
+	"github.com/qingcloudhx/core/data/property"
+	"github.com/qingcloudhx/core/data/schema"
+	"github.com/qingcloudhx/core/support"
+	"github.com/qingcloudhx/core/support/log"
+	"github.com/qingcloudhx/core/support/managed"
+	"github.com/qingcloudhx/core/trigger"
 )
 
 type Option func(*App) error

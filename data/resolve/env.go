@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"flogo/core/data"
+	"github.com/qingcloudhx/core/data"
 )
 
 var envResolverInfo = NewResolverInfo(true, true)

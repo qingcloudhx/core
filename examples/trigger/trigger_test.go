@@ -3,8 +3,8 @@ package sample
 import (
 	"testing"
 
-	"flogo/core/support"
-	"flogo/core/trigger"
+	"github.com/qingcloudhx/core/support"
+	"github.com/qingcloudhx/core/trigger"
 	"github.com/stretchr/testify/assert"
 )
 

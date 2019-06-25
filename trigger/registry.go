@@ -1,11 +1,11 @@
 package trigger
 
 import (
-	"flogo/core/support/log"
 	"fmt"
+	"github.com/qingcloudhx/core/support/log"
 	"path"
 
-	"flogo/core/support"
+	"github.com/qingcloudhx/core/support"
 )
 
 var (

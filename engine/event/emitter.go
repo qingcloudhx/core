@@ -5,7 +5,7 @@ import (
 	"runtime/debug"
 	"sync"
 
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 type Emitter struct {

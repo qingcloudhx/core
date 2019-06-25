@@ -1,13 +1,13 @@
 package ast
 
 import (
-	"flogo/core/data"
-	"flogo/core/data/resolve"
 	"fmt"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/resolve"
 	"strings"
 
-	"flogo/core/data/coerce"
-	"flogo/core/data/expression/script/gocc/token"
+	"github.com/qingcloudhx/core/data/coerce"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/token"
 )
 
 type literalExpr struct {

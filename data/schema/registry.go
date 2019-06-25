@@ -3,7 +3,7 @@ package schema
 import (
 	"fmt"
 
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 var (

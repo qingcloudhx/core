@@ -1,12 +1,12 @@
 package mapper
 
 import (
-	"flogo/core/data"
-	"flogo/core/data/coerce"
-	"flogo/core/data/expression"
-	"flogo/core/data/path"
-	"flogo/core/support/log"
 	"fmt"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/coerce"
+	"github.com/qingcloudhx/core/data/expression"
+	"github.com/qingcloudhx/core/data/path"
+	"github.com/qingcloudhx/core/support/log"
 	"reflect"
 	"runtime/debug"
 	"strings"

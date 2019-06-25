@@ -1,12 +1,12 @@
 package test
 
 import (
-	"flogo/core/activity"
-	"flogo/core/data"
-	"flogo/core/data/mapper"
-	"flogo/core/data/metadata"
-	"flogo/core/data/resolve"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/activity"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/mapper"
+	"github.com/qingcloudhx/core/data/metadata"
+	"github.com/qingcloudhx/core/data/resolve"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 var logger = log.ChildLogger(log.RootLogger(), "test")

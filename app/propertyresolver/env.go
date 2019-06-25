@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
-	"flogo/core/data/property"
-	"flogo/core/engine"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/data/property"
+	"github.com/qingcloudhx/core/engine"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 const EnvAppPropertyEnvConfigKey = "FLOGO_APP_PROPS_ENV"

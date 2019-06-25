@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	"flogo/core/data"
-	"flogo/core/data/expression/function"
-	"flogo/core/data/expression/script/gocc/token"
-	"flogo/core/data/resolve"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/expression/function"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/token"
+	"github.com/qingcloudhx/core/data/resolve"
 )
 
 func NewFuncExpr(name interface{}, args interface{}) (Expr, error) {

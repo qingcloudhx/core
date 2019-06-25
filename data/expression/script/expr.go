@@ -3,14 +3,14 @@ package script
 import (
 	"fmt"
 
-	"flogo/core/data/expression"
-	"flogo/core/data/expression/script/gocc/ast"
-	"flogo/core/data/expression/script/gocc/errors"
-	"flogo/core/data/expression/script/gocc/lexer"
-	"flogo/core/data/expression/script/gocc/parser"
-	"flogo/core/data/resolve"
+	"github.com/qingcloudhx/core/data/expression"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/ast"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/errors"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/lexer"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/parser"
+	"github.com/qingcloudhx/core/data/resolve"
 
-	_ "flogo/core/data/expression/function/builtin"
+	_ "github.com/qingcloudhx/core/data/expression/function/builtin"
 )
 
 func init() {

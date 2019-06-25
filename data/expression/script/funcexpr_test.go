@@ -2,12 +2,12 @@ package script
 
 import (
 	"bytes"
-	"flogo/core/data/resolve"
 	"fmt"
+	"github.com/qingcloudhx/core/data/resolve"
 	"testing"
 
-	"flogo/core/data"
-	"flogo/core/data/expression/function"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/expression/function"
 	"github.com/stretchr/testify/assert"
 )
 

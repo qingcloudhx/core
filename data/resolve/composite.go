@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"flogo/core/data"
-	"flogo/core/data/path"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/path"
 )
 
 var defaultResolver = NewCompositeResolver(map[string]Resolver{

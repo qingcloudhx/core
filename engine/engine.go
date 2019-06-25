@@ -7,9 +7,9 @@ import (
 	"sync"
 	"syscall"
 
-	"flogo/core/app"
-	"flogo/core/support/log"
-	"flogo/core/support/managed"
+	"github.com/qingcloudhx/core/app"
+	"github.com/qingcloudhx/core/support/log"
+	"github.com/qingcloudhx/core/support/managed"
 )
 
 var managedServices []managed.Managed

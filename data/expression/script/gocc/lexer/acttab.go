@@ -5,7 +5,7 @@ package lexer
 import (
 	"fmt"
 
-	"flogo/core/data/expression/script/gocc/token"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/token"
 )
 
 type ActionTable [NumStates]ActionRow

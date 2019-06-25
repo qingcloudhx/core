@@ -3,7 +3,7 @@ package expression
 import (
 	"fmt"
 
-	"flogo/core/data/resolve"
+	"github.com/qingcloudhx/core/data/resolve"
 )
 
 var scriptFactoryCreator FactoryCreatorFunc

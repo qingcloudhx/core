@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"flogo/core/action"
-	"flogo/core/support"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/support"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 // PooledRunner is a action runner that queues and runs a action in a worker pool

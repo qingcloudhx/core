@@ -3,8 +3,8 @@ package path
 import (
 	"encoding/json"
 	"errors"
-	"flogo/core/data/coerce"
 	"fmt"
+	"github.com/qingcloudhx/core/data/coerce"
 	"reflect"
 	"strconv"
 	"strings"

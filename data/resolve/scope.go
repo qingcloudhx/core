@@ -3,7 +3,7 @@ package resolve
 import (
 	"fmt"
 
-	"flogo/core/data"
+	"github.com/qingcloudhx/core/data"
 )
 
 var scopeResolverInfo = NewResolverInfo(false, false)

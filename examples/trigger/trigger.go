@@ -3,9 +3,9 @@ package sample
 import (
 	"context"
 
-	"flogo/core/data/coerce"
-	"flogo/core/data/metadata"
-	"flogo/core/trigger"
+	"github.com/qingcloudhx/core/data/coerce"
+	"github.com/qingcloudhx/core/data/metadata"
+	"github.com/qingcloudhx/core/trigger"
 )
 
 var triggerMd = trigger.NewMetadata(&Settings{}, &HandlerSettings{}, &Output{}, &Reply{})

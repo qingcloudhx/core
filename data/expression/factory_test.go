@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"flogo/core/data"
-	"flogo/core/data/resolve"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/resolve"
 	"github.com/stretchr/testify/assert"
 )
 

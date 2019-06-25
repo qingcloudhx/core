@@ -1,15 +1,15 @@
 package app
 
 import (
-	"flogo/core/action"
-	"flogo/core/data/expression"
-	"flogo/core/data/mapper"
-	"flogo/core/data/resolve"
-	"flogo/core/support"
-	"flogo/core/support/log"
-	"flogo/core/support/managed"
-	"flogo/core/trigger"
 	"fmt"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/data/expression"
+	"github.com/qingcloudhx/core/data/mapper"
+	"github.com/qingcloudhx/core/data/resolve"
+	"github.com/qingcloudhx/core/support"
+	"github.com/qingcloudhx/core/support/log"
+	"github.com/qingcloudhx/core/support/managed"
+	"github.com/qingcloudhx/core/trigger"
 )
 
 func (a *App) createSharedActions(actionConfigs []*action.Config) (map[string]action.Action, error) {

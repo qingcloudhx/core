@@ -1,9 +1,9 @@
 package resolve
 
 import (
-	"flogo/core/data"
-	"flogo/core/data/path"
 	"fmt"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/path"
 )
 
 var loopResolverInfo = NewImplicitResolverInfo(false, true)

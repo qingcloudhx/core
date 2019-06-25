@@ -2,13 +2,13 @@ package engine
 
 import (
 	"encoding/json"
-	"flogo/core/data/schema"
+	"github.com/qingcloudhx/core/data/schema"
 	"io/ioutil"
 	"os"
 
-	"flogo/core/app"
-	"flogo/core/engine/secret"
-	"flogo/core/support"
+	"github.com/qingcloudhx/core/app"
+	"github.com/qingcloudhx/core/engine/secret"
+	"github.com/qingcloudhx/core/support"
 )
 
 var appName, appVersion string
@@ -41,7 +41,7 @@ func LoadAppConfig(flogoJson string, compressed bool) (*app.Config, error) {
 
 		// a json string wasn't provided, so lets lookup the file in path
 		configPath := GetFlogoConfigPath()
-
+		configPath = "/home/code/flowgo/core/examples/engine/flogo.json"
 		flogo, err := os.Open(configPath)
 		if err != nil {
 			return nil, err

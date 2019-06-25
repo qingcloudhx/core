@@ -7,7 +7,7 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 // HandlePanic helper method to handle panics

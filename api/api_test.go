@@ -2,8 +2,8 @@ package api
 
 import (
 	"context"
-	"flogo/core/data"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/support/log"
 	"testing"
 )
 

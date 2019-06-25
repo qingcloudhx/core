@@ -1,8 +1,8 @@
 package expression
 
 import (
-	"flogo/core/data"
-	"flogo/core/data/resolve"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/resolve"
 )
 
 func NewLiteralExpr(val interface{}) Expr {

@@ -2,13 +2,13 @@ package propertyresolver
 
 import (
 	"encoding/json"
-	"flogo/core/data/property"
-	"flogo/core/engine"
+	"github.com/qingcloudhx/core/data/property"
+	"github.com/qingcloudhx/core/engine"
 	"io/ioutil"
 	"os"
 	"strings"
 
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 var preload = make(map[string]interface{})

@@ -1,7 +1,7 @@
 package builtin
 
 import (
-	"flogo/core/data/expression/function"
+	"github.com/qingcloudhx/core/data/expression/function"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

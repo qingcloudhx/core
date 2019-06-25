@@ -8,7 +8,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"flogo/core/app"
+	"github.com/qingcloudhx/core/app"
 	"github.com/square-it/jsonschema"
 )
 

@@ -3,7 +3,7 @@ package data
 import (
 	"encoding/json"
 
-	"flogo/core/data/schema"
+	"github.com/qingcloudhx/core/data/schema"
 )
 
 func NewAttribute(name string, dataType Type, value interface{}) *Attribute {

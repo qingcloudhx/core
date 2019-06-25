@@ -1,8 +1,8 @@
 package function
 
 import (
-	"flogo/core/support/log"
 	"fmt"
+	"github.com/qingcloudhx/core/support/log"
 	"path"
 	"reflect"
 	"strings"

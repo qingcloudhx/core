@@ -3,8 +3,8 @@ package builtin
 import (
 	"reflect"
 
-	"flogo/core/data"
-	"flogo/core/data/expression/function"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/expression/function"
 )
 
 func init() {

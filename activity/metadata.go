@@ -3,8 +3,8 @@ package activity
 import (
 	"encoding/json"
 
-	"flogo/core/data"
-	"flogo/core/data/metadata"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/metadata"
 )
 
 type Metadata struct {

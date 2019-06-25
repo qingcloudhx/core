@@ -1,6 +1,7 @@
-module flogo/core
+module github.com/qingcloudhx/core
 
 require (
+	github.com/pkg/errors v0.8.1 // indirect
 	github.com/square-it/jsonschema v1.9.1 // indirect
 	github.com/stretchr/testify v1.3.0
 	github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f // indirect

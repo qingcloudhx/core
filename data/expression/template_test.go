@@ -3,7 +3,7 @@ package expression
 import (
 	"testing"
 
-	"flogo/core/data"
+	"github.com/qingcloudhx/core/data"
 	"github.com/stretchr/testify/assert"
 )
 

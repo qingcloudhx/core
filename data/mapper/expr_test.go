@@ -6,11 +6,11 @@ import (
 	"reflect"
 	"testing"
 
-	"flogo/core/data"
-	"flogo/core/data/coerce"
-	"flogo/core/data/expression/function"
-	_ "flogo/core/data/expression/script"
-	"flogo/core/data/resolve"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/coerce"
+	"github.com/qingcloudhx/core/data/expression/function"
+	_ "github.com/qingcloudhx/core/data/expression/script"
+	"github.com/qingcloudhx/core/data/resolve"
 	"github.com/stretchr/testify/assert"
 )
 

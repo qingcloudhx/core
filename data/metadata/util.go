@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"reflect"
 
-	"flogo/core/data"
-	"flogo/core/data/coerce"
-	"flogo/core/data/expression"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/coerce"
+	"github.com/qingcloudhx/core/data/expression"
 )
 
 const metadataTag = "md"

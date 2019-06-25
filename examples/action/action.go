@@ -3,9 +3,9 @@ package sample
 import (
 	"context"
 
-	"flogo/core/action"
-	"flogo/core/data/metadata"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/data/metadata"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 func init() {

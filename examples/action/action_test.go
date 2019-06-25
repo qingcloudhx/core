@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"flogo/core/action"
-	"flogo/core/support"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/support"
 	"github.com/stretchr/testify/assert"
 )
 

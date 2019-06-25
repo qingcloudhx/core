@@ -5,8 +5,8 @@ import (
 	"crypto/x509"
 	"io/ioutil"
 
-	"flogo/core/data/coerce"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/data/coerce"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 const ConfigSchema = `

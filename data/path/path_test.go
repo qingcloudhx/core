@@ -3,7 +3,7 @@ package path
 import (
 	"testing"
 
-	"flogo/core/data/coerce"
+	"github.com/qingcloudhx/core/data/coerce"
 	"github.com/stretchr/testify/assert"
 )
 

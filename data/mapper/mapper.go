@@ -1,6 +1,6 @@
 package mapper
 
-import "flogo/core/data"
+import "github.com/qingcloudhx/core/data"
 
 type Factory interface {
 	NewMapper(mappings map[string]interface{}) (Mapper, error)

@@ -1,10 +1,10 @@
 package action
 
 import (
-	"flogo/core/support/log"
 	"fmt"
+	"github.com/qingcloudhx/core/support/log"
 
-	"flogo/core/support"
+	"github.com/qingcloudhx/core/support"
 )
 
 var (

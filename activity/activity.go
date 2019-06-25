@@ -1,8 +1,8 @@
 package activity
 
 import (
-	"flogo/core/data/mapper"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/data/mapper"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 // Activity is an interface for defining a custom Activity Execution

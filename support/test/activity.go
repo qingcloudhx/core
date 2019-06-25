@@ -1,9 +1,9 @@
 package test
 
 import (
-	"flogo/core/activity"
-	"flogo/core/data"
-	"flogo/core/data/metadata"
+	"github.com/qingcloudhx/core/activity"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/metadata"
 )
 
 func init() {

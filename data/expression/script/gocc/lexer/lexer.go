@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"unicode/utf8"
 
-	"flogo/core/data/expression/script/gocc/token"
+	"github.com/qingcloudhx/core/data/expression/script/gocc/token"
 )
 
 const (

@@ -3,9 +3,9 @@ package main
 import (
 	"os"
 
-	_ "flogo/core/data/expression/script"
-	"flogo/core/engine"
-	"flogo/core/support/log"
+	_ "github.com/qingcloudhx/core/data/expression/script"
+	"github.com/qingcloudhx/core/engine"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 var (

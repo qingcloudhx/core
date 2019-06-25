@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"flogo/core/action"
+	"github.com/qingcloudhx/core/action"
 )
 
 // DirectRunner runs an action synchronously

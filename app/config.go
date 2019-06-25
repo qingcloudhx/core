@@ -1,11 +1,11 @@
 package app
 
 import (
-	"flogo/core/action"
-	"flogo/core/app/resource"
-	"flogo/core/data"
-	"flogo/core/data/schema"
-	"flogo/core/trigger"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/app/resource"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/schema"
+	"github.com/qingcloudhx/core/trigger"
 )
 
 // Def is the configuration for the App

@@ -5,12 +5,12 @@ import (
 	"errors"
 	"fmt"
 
-	"flogo/core/action"
-	"flogo/core/data"
-	"flogo/core/data/coerce"
-	"flogo/core/data/expression"
-	"flogo/core/data/mapper"
-	"flogo/core/support/log"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/data"
+	"github.com/qingcloudhx/core/data/coerce"
+	"github.com/qingcloudhx/core/data/expression"
+	"github.com/qingcloudhx/core/data/mapper"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 type Handler interface {

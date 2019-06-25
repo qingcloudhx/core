@@ -2,10 +2,10 @@ package trigger
 
 import (
 	"encoding/json"
-	"flogo/core/action"
-	"flogo/core/data/expression"
-	"flogo/core/data/metadata"
-	"flogo/core/data/resolve"
+	"github.com/qingcloudhx/core/action"
+	"github.com/qingcloudhx/core/data/expression"
+	"github.com/qingcloudhx/core/data/metadata"
+	"github.com/qingcloudhx/core/data/resolve"
 )
 
 // Config is the configuration for a Trigger

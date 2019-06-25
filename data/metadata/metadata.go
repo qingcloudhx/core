@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	"flogo/core/data"
+	"github.com/qingcloudhx/core/data"
 )
 
 //
