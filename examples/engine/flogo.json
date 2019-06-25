@@ -5,9 +5,9 @@
   "description": "My flogo application description",
   "appModel": "1.1.0",
   "imports": [
-    "flogo/contrib/activity/log",
-    "flogo/contrib/trigger/rest",
-    "flogo/flow"
+    "github.com/qingcloudhx/flow-plugin/activity/log",
+    "github.com/qingcloudhx/flow-plugin/trigger/rest",
+    "github.com/qingcloudhx/flow"
   ],
   "triggers": [
     {
