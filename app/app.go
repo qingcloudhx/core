@@ -64,6 +64,11 @@ func New(config *Config, runner action.Runner, options ...Option) (*App, error) 
 			return nil, err
 		}
 	}
+
+	//todo resource parse
+	resources := make(map[string]*resource.Resource, len(config.Resources))
+	app.resManager = resource.NewManager(resources)
+
 	//todo action
 	for _, actionFactory := range action.Factories() {
 		err := actionFactory.Initialize(app)
@@ -71,9 +76,6 @@ func New(config *Config, runner action.Runner, options ...Option) (*App, error) 
 			return nil, err
 		}
 	}
-	//todo resource parse
-	resources := make(map[string]*resource.Resource, len(config.Resources))
-	app.resManager = resource.NewManager(resources)
 
 	for _, resConfig := range config.Resources {
 		resType, err := resource.GetTypeFromID(resConfig.ID)

@@ -9,6 +9,9 @@ import (
 
 	_ "github.com/qingcloudhx/core/data/expression/script"
 	"github.com/qingcloudhx/core/engine"
+	_ "github.com/qingcloudhx/flow"
+	_ "github.com/qingcloudhx/flow-plugin/activity/log"
+	_ "github.com/qingcloudhx/flow-plugin/trigger/rest"
 )
 
 var (
@@ -33,7 +36,7 @@ func main() {
 		}
 		defer pprof.StopCPUProfile()
 	}
-
+	os.Setenv("FLOGO_CONFIG_PATH", "/home/code/flowgo/core/examples/engine/flogo.json")
 	cfg, err := engine.LoadAppConfig(cfgJson, cfgCompressed)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to create engine: %v\n", err)

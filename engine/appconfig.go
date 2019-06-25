@@ -41,7 +41,7 @@ func LoadAppConfig(flogoJson string, compressed bool) (*app.Config, error) {
 
 		// a json string wasn't provided, so lets lookup the file in path
 		configPath := GetFlogoConfigPath()
-		configPath = "/home/code/flowgo/core/examples/engine/flogo.json"
+
 		flogo, err := os.Open(configPath)
 		if err != nil {
 			return nil, err
