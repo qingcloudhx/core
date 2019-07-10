@@ -1,7 +1,25 @@
 # github.com/davecgh/go-spew v1.1.0
 github.com/davecgh/go-spew/spew
+# github.com/julienschmidt/httprouter v1.2.0
+github.com/julienschmidt/httprouter
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
+# github.com/qingcloudhx/flow v1.0.0
+github.com/qingcloudhx/flow
+github.com/qingcloudhx/flow/definition
+github.com/qingcloudhx/flow/instance
+github.com/qingcloudhx/flow/model
+github.com/qingcloudhx/flow/model/simple
+github.com/qingcloudhx/flow/support
+github.com/qingcloudhx/flow/tester
+github.com/qingcloudhx/flow/util
+github.com/qingcloudhx/flow/service
+github.com/qingcloudhx/flow/support/event
+# github.com/qingcloudhx/flow-plugin/activity/log v0.0.0-20190625104814-259c6d75af9e
+github.com/qingcloudhx/flow-plugin/activity/log
+# github.com/qingcloudhx/flow-plugin/trigger/rest v0.0.0-20190625104814-259c6d75af9e
+github.com/qingcloudhx/flow-plugin/trigger/rest
+github.com/qingcloudhx/flow-plugin/trigger/rest/cors
 # github.com/stretchr/objx v0.1.0
 github.com/stretchr/objx
 # github.com/stretchr/testify v1.3.0
