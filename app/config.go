@@ -24,3 +24,7 @@ type Config struct {
 	Actions    []*action.Config       `json:"actions,omitempty"`
 	Schemas    map[string]*schema.Def `json:"schemas,omitempty"`
 }
+
+func LoadConfig() *Config {
+	return nil
+}
