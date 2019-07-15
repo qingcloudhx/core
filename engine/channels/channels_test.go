@@ -155,3 +155,10 @@ func TestChannel_Callback(t *testing.T) {
 	assert.Equal(t, 1, cbt.called)
 	assert.Equal(t, 22, cbt.val)
 }
+
+func TestDecode(t *testing.T) {
+	channal := "hexing:10"
+	res, n := Decode(channal)
+	assert.Equal(t, 10, n)
+	assert.Equal(t, "hexing", res)
+}
