@@ -94,12 +94,13 @@ func New(config *Config, runner action.Runner, options ...Option) (*App, error) 
 
 	var err error
 
-	//todo create actions
+	//todo create share actions
 	app.actions, err = app.createSharedActions(config.Actions)
 	if err != nil {
 		return nil, fmt.Errorf("error creating shared action instances - %s", err.Error())
 	}
 
+	//todo create triggers
 	app.triggers, err = app.createTriggers(config.Triggers, runner)
 	if err != nil {
 		return nil, fmt.Errorf("error creating trigger instances - %s", err.Error())
