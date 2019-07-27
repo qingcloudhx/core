@@ -134,6 +134,7 @@ func (a *App) createTriggers(tConfigs []*trigger.Config, runner action.Runner) (
 				if act.Act != nil {
 					acts = append(acts, act.Act)
 				} else {
+					//todo action id is empty
 					if id := act.Id; id != "" {
 						act, _ := a.actions[id]
 						if act == nil {

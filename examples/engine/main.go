@@ -15,7 +15,7 @@ import (
 var (
 	cpuProfile    = flag.String("cpuprofile", "", "Writes CPU profile to the specified file")
 	memProfile    = flag.String("memprofile", "", "Writes memory profile to the specified file")
-	fileJson      = flag.String("conf", "./flow.json", "app config")
+	fileJson      = flag.String("conf", "", "app config")
 	cfgJson       string
 	cfgCompressed bool
 )
@@ -36,12 +36,14 @@ func main() {
 		defer pprof.StopCPUProfile()
 	}
 	//os.Setenv("FLOGO_CONFIG_PATH", "/home/code/flowgo/core/examples/engine/flogo.json")
-	data, err := ioutil.ReadFile(*fileJson)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to read config file: %s\n", *fileJson)
-		cfgJson = ""
-	} else {
-		cfgJson = string(data)
+	if *fileJson != "" {
+		data, err := ioutil.ReadFile(*fileJson)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Failed to read config file: %s\n", *fileJson)
+			os.Exit(1)
+		} else {
+			cfgJson = string(data)
+		}
 	}
 	cfg, err := engine.LoadAppConfig(cfgJson, cfgCompressed)
 	if err != nil {
