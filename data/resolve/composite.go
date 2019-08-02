@@ -13,6 +13,10 @@ var defaultResolver = NewCompositeResolver(map[string]Resolver{
 	"env":      &EnvResolver{},
 	"property": &PropertyResolver{},
 	"loop":     &LoopResolver{},
+	//"iteration": &IteratorResolver{}, //todo should we create a separate resolver to use in iterations?
+	"activity": &ActivityResolver{},
+	//"error":     &ErrorResolver{},
+	//"flow":      &FlowResolver{}})
 })
 
 func GetBasicResolver() CompositeResolver {
