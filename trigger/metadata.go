@@ -12,7 +12,7 @@ type Metadata struct {
 	HandlerSettings map[string]data.TypedValue
 	Output          map[string]data.TypedValue
 	Reply           map[string]data.TypedValue
-
+	Event           map[string]data.TypedValue
 	//DEPRECATED
 	ID string
 }
@@ -29,7 +29,7 @@ func NewMetadata(mdStructs ...interface{}) *Metadata {
 	var handlerSettings map[string]data.TypedValue
 	var output map[string]data.TypedValue
 	var reply map[string]data.TypedValue
-
+	var event map[string]data.TypedValue
 	for _, mdStruct := range mdStructs {
 		typedMap := metadata.StructToTypedMap(mdStruct)
 		name := getName(mdStruct)
@@ -43,10 +43,12 @@ func NewMetadata(mdStructs ...interface{}) *Metadata {
 			output = typedMap
 		case "reply":
 			reply = typedMap
+		case "event":
+			event = typedMap
 		}
 	}
 
-	return &Metadata{Settings: settings, HandlerSettings: handlerSettings, Output: output, Reply: reply}
+	return &Metadata{Settings: settings, HandlerSettings: handlerSettings, Output: output, Reply: reply, Event: event}
 }
 
 func getName(mdStruct interface{}) string {

@@ -132,6 +132,7 @@ type App struct {
 }
 
 type triggerWrapper struct {
+	//event mapper.Mapper//add event mapper
 	ref    string
 	trg    trigger.Trigger
 	status *managed.StatusInfo

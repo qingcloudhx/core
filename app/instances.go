@@ -193,7 +193,10 @@ func (a *App) createTriggers(tConfigs []*trigger.Config, runner action.Runner) (
 		if err != nil {
 			return nil, err
 		}
-
+		//eventMapper,err := mapperFactory.NewMapper(tConfig.Event)
+		//if err != nil {
+		//	return nil, err
+		//}
 		triggers[tConfig.Id] = &triggerWrapper{ref: ref, trg: trg, status: &managed.StatusInfo{Name: tConfig.Id}}
 	}
 

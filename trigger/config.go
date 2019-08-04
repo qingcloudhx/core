@@ -17,6 +17,8 @@ type Config struct {
 
 	//DEPRECATED
 	Type string `json:"type,omitempty"`
+	//todo add emiter mapper
+	Event map[string]interface{} `json:"event"`
 }
 
 func (c *Config) FixUp(md *Metadata) error {

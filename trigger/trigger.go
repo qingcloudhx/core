@@ -5,6 +5,8 @@ import (
 	"github.com/qingcloudhx/core/support/managed"
 )
 
+type Callback func(map[string]interface{})
+
 // Trigger is object that triggers/starts flow instances and
 // is managed by an engine
 type Trigger interface {
@@ -12,6 +14,9 @@ type Trigger interface {
 
 	// Initialize is called to initialize the Trigger
 	Initialize(ctx InitContext) error
+
+	//Add event callback
+	//GetCallback(call Callback)
 }
 
 // InitContext is the initialization context for the trigger instance

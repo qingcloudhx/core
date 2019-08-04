@@ -106,9 +106,18 @@ func TestFuncExprSingleQuote(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, "abcdef", v)
 }
-
+func TestFuncJscode(t *testing.T) {
+	scope := data.NewSimpleScope(map[string]interface{}{"queryParams": map[string]interface{}{"id": "flogo"}}, nil)
+	expr, err := factory.NewExpr("script.jscode($.queryParams)")
+	assert.Nil(t, err)
+	v, err := expr.Eval(scope)
+	assert.Nil(t, err)
+	t.Log(v)
+	assert.Equal(t, "abcdef", v)
+}
 func init() {
 	function.Register(&tLength{})
+	function.Register(&jscode{})
 	function.ResolveAliases()
 
 }
@@ -127,4 +136,25 @@ func (tLength) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (tLength) Eval(params ...interface{}) (interface{}, error) {
 	p := params[0].(string)
 	return len(p), nil
+}
+
+type jscode struct {
+}
+
+func (jscode) Name() string {
+	return "jscode"
+}
+func (jscode) Sig() (paramTypes []data.Type, isVariadic bool) {
+	return []data.Type{data.TypeObject}, false
+}
+func (jscode) Eval(params ...interface{}) (interface{}, error) {
+	run := `
+		param.id
+	`
+	GetJSRuntime().Set("param", params[0])
+	if value, err := GetJSRuntime().RunString(run); err != nil {
+		return nil, err
+	} else {
+		return value.Export(), nil
+	}
 }

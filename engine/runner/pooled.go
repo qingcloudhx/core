@@ -3,6 +3,7 @@ package runner
 import (
 	"context"
 	"errors"
+	"time"
 
 	"github.com/qingcloudhx/core/action"
 	"github.com/qingcloudhx/core/support"
@@ -109,7 +110,10 @@ func (runner *PooledRunner) RunAction(ctx context.Context, act action.Action, in
 	if act == nil {
 		return nil, errors.New("action not specified")
 	}
-
+	start := time.Now()
+	defer func() {
+		logger.Infof("pool action finished lost(%d)", time.Since(start))
+	}()
 	if runner.active {
 
 		actionData := &ActionData{context: ctx, action: act, inputs: inputs, arc: make(chan *ActionResult, 1)}
@@ -126,7 +130,6 @@ func (runner *PooledRunner) RunAction(ctx context.Context, act action.Action, in
 		if logger.DebugEnabled() {
 			logger.Debugf("Action '%s' returned", support.GetRef(act))
 		}
-
 		return reply.results, reply.err
 	}
 
