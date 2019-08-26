@@ -123,6 +123,41 @@ func ToInt64(val interface{}) (int64, error) {
 	}
 }
 
+// ToInteger coerce a value to an integer
+func ToUInt64(val interface{}) (uint64, error) {
+	switch t := val.(type) {
+	case int:
+		return uint64(t), nil
+	case int32:
+		return uint64(t), nil
+	case int64:
+		return uint64(t), nil
+	case uint64:
+		return t, nil
+	case float32:
+		return uint64(t), nil
+	case float64:
+		return uint64(t), nil
+	case json.Number:
+		v, err := t.Int64()
+		if err != nil {
+			return 0, err
+		}
+		return uint64(v), err
+	case string:
+		return strconv.ParseUint(t, 10, 64)
+	case bool:
+		if t {
+			return 1, nil
+		}
+		return 0, nil
+	case nil:
+		return 0, nil
+	default:
+		return 0, fmt.Errorf("unable to coerce %#v to integer", val)
+	}
+}
+
 // ToFloat64 coerce a value to a double/float64
 func ToFloat32(val interface{}) (float32, error) {
 	switch t := val.(type) {
