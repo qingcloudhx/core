@@ -23,6 +23,7 @@ const (
 	TypeInt     // int
 	TypeInt32   // int32
 	TypeInt64   // int64
+	TypeUInt64  // uint64
 	TypeFloat32 // float32
 	TypeFloat64 // float64
 	TypeBool    // bool
@@ -42,6 +43,7 @@ var types = [...]string{
 	"int",
 	"int32",
 	"int64",
+	"uint64",
 	"float32",
 	"float64",
 	"bool",
@@ -68,6 +70,7 @@ var names = map[Type]string{
 	TypeInt:     "TypeInt",
 	TypeInt32:   "TypeInt32",
 	TypeInt64:   "TypeInt64",
+	TypeUInt64:  "TypeUInt64",
 	TypeFloat32: "TypeFloat32",
 	TypeFloat64: "TypeFloat64",
 	TypeBool:    "TypeBool",
@@ -97,6 +100,8 @@ func ToTypeEnum(typeStr string) (Type, error) {
 		return TypeInt32, nil
 	case "int64", "long":
 		return TypeInt64, nil
+	case "uint64":
+		return TypeUInt64, nil
 	case "float32", "float":
 		return TypeFloat32, nil
 	case "float64", "double":
@@ -133,6 +138,8 @@ func GetType(val interface{}) (Type, error) {
 		return TypeInt, nil
 	case int64:
 		return TypeInt64, nil
+	case uint64:
+		return TypeUInt64, nil
 	case float32:
 		return TypeFloat32, nil
 	case float64:
@@ -171,6 +178,8 @@ func ToTypeFromGoRep(strType string) Type {
 		dt = TypeInt32
 	case "int64":
 		dt = TypeInt64
+	case "uint64":
+		dt = TypeUInt64
 	case "float32":
 		dt = TypeFloat32
 	case "float64":
@@ -190,7 +199,7 @@ func ToTypeFromGoRep(strType string) Type {
 
 func IsSimpleType(val interface{}) bool {
 	switch val.(type) {
-	case string, int, int32, int64, float32, float64, json.Number, bool:
+	case string, int, int32, int64, uint64, float32, float64, json.Number, bool:
 		return true
 	default:
 		return false
