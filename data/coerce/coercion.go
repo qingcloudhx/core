@@ -36,6 +36,8 @@ func ToType(value interface{}, dataType data.Type) (interface{}, error) {
 		coerced, err = ToInt32(value)
 	case data.TypeInt64:
 		coerced, err = ToInt64(value)
+	case data.TypeUInt64:
+		coerced, err = ToUInt64(value)
 	case data.TypeFloat32:
 		coerced, err = ToFloat32(value)
 	case data.TypeFloat64:
