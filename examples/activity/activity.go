@@ -3,6 +3,7 @@ package sample
 import (
 	"github.com/qingcloudhx/core/activity"
 	"github.com/qingcloudhx/core/data/metadata"
+	"github.com/qingcloudhx/core/support/log"
 )
 
 func init() {
@@ -22,13 +23,14 @@ func New(ctx activity.InitContext) (activity.Activity, error) {
 
 	ctx.Logger().Debugf("Setting: %s", s.ASetting)
 
-	act := &Activity{} //add aSetting to instance
+	act := &Activity{log: ctx.Logger()} //add aSetting to instance
 
 	return act, nil
 }
 
 // Activity is an sample Activity that can be used as a base to create a custom activity
 type Activity struct {
+	log log.Logger
 }
 
 // Metadata returns the activity's metadata
