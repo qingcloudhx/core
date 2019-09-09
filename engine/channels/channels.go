@@ -12,13 +12,17 @@ import (
 var channels = make(map[string]*channelImpl)
 var active bool
 
+type Message struct {
+	Head map[string]interface{}
+	Body map[string]interface{}
+}
 type Channel interface {
 	RegisterCallback(callback OnMessage) error
-	Publish(msg interface{})
-	PublishNoWait(msg interface{}) bool
+	Publish(msg *Message)
+	PublishNoWait(msg *Message) bool
 }
 
-type OnMessage func(msg interface{})
+type OnMessage func(msg *Message)
 
 // Creates a new channel, channels have to be created before the engine starts
 func New(name string, bufferSize int) (Channel, error) {
@@ -31,7 +35,7 @@ func New(name string, bufferSize int) (Channel, error) {
 		return nil, errors.New("channel already exists: " + name)
 	}
 
-	channel := &channelImpl{name: name, ch: make(chan interface{}, bufferSize)}
+	channel := &channelImpl{name: name, ch: make(chan *Message, bufferSize)}
 	channels[name] = channel
 
 	return channel, nil
@@ -91,7 +95,7 @@ func Stop() error {
 type channelImpl struct {
 	name      string
 	callbacks []OnMessage
-	ch        chan interface{}
+	ch        chan *Message
 	active    bool
 }
 
@@ -119,11 +123,11 @@ func (c *channelImpl) RegisterCallback(callback OnMessage) error {
 	return nil
 }
 
-func (c *channelImpl) Publish(msg interface{}) {
+func (c *channelImpl) Publish(msg *Message) {
 	c.ch <- msg
 }
 
-func (c *channelImpl) PublishNoWait(msg interface{}) bool {
+func (c *channelImpl) PublishNoWait(msg *Message) bool {
 
 	sent := false
 	select {

@@ -74,8 +74,10 @@ func TestChannel_Publish(t *testing.T) {
 	channel, err := New("test1", 1)
 	assert.Nil(t, err)
 	assert.NotNil(t, channel)
-
-	channel.Publish(1)
+	msg := &Message{
+		Head: make(map[string]interface{}),
+	}
+	channel.Publish(msg)
 
 	cImpl := channel.(*channelImpl)
 
@@ -92,9 +94,11 @@ func TestChannel_PublishNoWait(t *testing.T) {
 	channel, err := New("test1", 1)
 	assert.Nil(t, err)
 	assert.NotNil(t, channel)
-
-	channel.Publish(1)
-	sent := channel.PublishNoWait(2)
+	msg := &Message{
+		Head: make(map[string]interface{}),
+	}
+	channel.Publish(msg)
+	sent := channel.PublishNoWait(msg)
 
 	assert.False(t, sent)
 }
@@ -108,7 +112,7 @@ func TestChannel_AddListenerStarted(t *testing.T) {
 	cImpl := channel.(*channelImpl)
 	_ = cImpl.Start()
 
-	err = cImpl.RegisterCallback(func(msg interface{}) {
+	err = cImpl.RegisterCallback(func(msg *Message) {
 		//dummy
 	})
 	assert.NotNil(t, err)
@@ -122,7 +126,7 @@ func TestChannel_AddListener(t *testing.T) {
 
 	cImpl := channel.(*channelImpl)
 
-	err = cImpl.RegisterCallback(func(msg interface{}) {
+	err = cImpl.RegisterCallback(func(msg *Message) {
 		//dummy
 	})
 	assert.Equal(t, 1, len(cImpl.callbacks))
@@ -133,7 +137,7 @@ type cbTester struct {
 	val    interface{}
 }
 
-func (cbt *cbTester) onMessage(msg interface{}) {
+func (cbt *cbTester) onMessage(msg *Message) {
 	cbt.called++
 	cbt.val = msg
 }
@@ -149,8 +153,10 @@ func TestChannel_Callback(t *testing.T) {
 	cbt := &cbTester{}
 	err = cImpl.RegisterCallback(cbt.onMessage)
 	_ = Start()
-
-	channel.Publish(22)
+	msg := &Message{
+		Head: make(map[string]interface{}),
+	}
+	channel.Publish(msg)
 	time.Sleep(100 * time.Millisecond)
 	assert.Equal(t, 1, cbt.called)
 	assert.Equal(t, 22, cbt.val)
