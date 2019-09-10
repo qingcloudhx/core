@@ -14,7 +14,7 @@ var active bool
 
 type Message struct {
 	Head map[string]interface{}
-	Body map[string]interface{}
+	Body []byte
 }
 type Channel interface {
 	RegisterCallback(callback OnMessage) error
