@@ -132,7 +132,7 @@ func toZapLogLevel(level Level) zapcore.Level {
 		return zapcore.ErrorLevel
 	}
 
-	return zapcore.InfoLevel
+	return zapcore.DebugLevel
 }
 
 func newZapRootLogger(name string, format Format) Logger {
@@ -169,14 +169,11 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 		eCfg.EncodeName = nameEncoder
 	}
 
-	cfg.EncoderConfig = eCfg
-
 	lvl := cfg.Level
 	zl, err := cfg.Build(zap.AddCallerSkip(1))
 
 	return zl, &lvl, err
 }
-
 func newZapTraceLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 	cfg := zap.NewProductionConfig()
 	eCfg := cfg.EncoderConfig
