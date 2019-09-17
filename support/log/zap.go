@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+	"os"
 )
 
 var traceLogger *zap.SugaredLogger
@@ -137,7 +138,7 @@ func toZapLogLevel(level Level) zapcore.Level {
 
 func newZapRootLogger(name string, format Format) Logger {
 
-	zl, lvl, _ := newZapLogger(format)
+	zl, lvl, _ := newZapLoggerEx()
 
 	var rootLogger Logger
 	if name == "" {
@@ -173,6 +174,18 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 	zl, err := cfg.Build(zap.AddCallerSkip(1))
 
 	return zl, &lvl, err
+}
+func newZapLoggerEx() (*zap.Logger, *zap.AtomicLevel, error) {
+	zl, _ := NewZapLogger(
+		&Opt{
+			LogPath:   os.TempDir(),
+			LogName:   LogFileName,
+			MaxBackup: 100,
+			LogLevel:  DEBUG,
+			LogOutput: ALL,
+		})
+	lvl := zap.NewAtomicLevel()
+	return zl, &lvl, nil
 }
 func newZapTraceLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 	cfg := zap.NewProductionConfig()

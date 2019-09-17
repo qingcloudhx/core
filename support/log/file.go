@@ -1,4 +1,4 @@
-package flielog
+package log
 
 import (
 	"go.uber.org/zap"
@@ -8,8 +8,6 @@ import (
 	"os"
 	"path/filepath"
 )
-
-type Level int
 
 const (
 	DEBUG Level = iota
@@ -59,15 +57,15 @@ const (
 )
 
 var (
-	//TestLog, _ = NewZapLogger(&Opt{LogOutput: CONSOLE, LogLevel: INFO})
-	BLogger, _ = NewZapLogger(
-		&Opt{
-			LogPath:   os.TempDir(),
-			LogName:   LogFileName,
-			MaxBackup: 100,
-			LogLevel:  DEBUG,
-			LogOutput: ALL,
-		})
+//TestLog, _ = NewZapLogger(&Opt{LogOutput: CONSOLE, LogLevel: INFO})
+//BLogger, _ = NewZapLogger(
+//	&Opt{
+//		LogPath:   os.TempDir(),
+//		LogName:   LogFileName,
+//		MaxBackup: 100,
+//		LogLevel:  DEBUG,
+//		LogOutput: ALL,
+//	})
 )
 
 func NewZapLogger(opt *Opt) (*zap.Logger, io.Writer) {
