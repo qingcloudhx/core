@@ -10,6 +10,7 @@ type Format int
 
 const (
 	EnvKeyLogCtx         = "FLOGO_LOG_CTX"
+	EnvFileName          = "FLOGO_FILE_NAME"
 	EnvKeyLogDateFormat  = "FLOGO_LOG_DTFORMAT"
 	DefaultLogDateFormat = "2006-01-02 15:04:05.000"
 	EnvKeyLogLevel       = "FLOGO_LOG_LEVEL"
