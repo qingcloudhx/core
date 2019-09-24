@@ -5,7 +5,9 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"os"
+	"strconv"
 	"strings"
+	"time"
 )
 
 var traceLogger *zap.SugaredLogger
@@ -179,7 +181,8 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 func newZapLoggerEx() (*zap.Logger, *zap.AtomicLevel, error) {
 	logfile := os.Getenv(EnvFileName)
 	if strings.ToLower(logfile) == "" {
-		logfile = LogFileName
+		last := time.Now().Unix()
+		logfile = LogFileName + strconv.FormatInt(last, 10) + ".log"
 	}
 
 	zl, _ := NewZapLogger(

@@ -53,7 +53,7 @@ type Opt struct {
 }
 
 const (
-	LogFileName = "flogo.log"
+	LogFileName = "flogo_"
 )
 
 var (
