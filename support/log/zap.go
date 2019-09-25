@@ -141,7 +141,7 @@ func toZapLogLevel(level Level) zapcore.Level {
 
 func newZapRootLogger(name string, format Format) Logger {
 
-	zl, lvl, _ := newZapLoggerEx()
+	zl, lvl, _ := newZapLoggerEx(name)
 
 	var rootLogger Logger
 	if name == "" {
@@ -178,17 +178,17 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 
 	return zl, &lvl, err
 }
-func newZapLoggerEx() (*zap.Logger, *zap.AtomicLevel, error) {
-	logfile := os.Getenv(EnvFileName)
-	if strings.ToLower(logfile) == "" {
+func newZapLoggerEx(name string) (*zap.Logger, *zap.AtomicLevel, error) {
+	//logfile := os.Getenv(EnvFileName)
+	if strings.ToLower(name) == "" {
 		last := time.Now().Unix()
-		logfile = LogFileName + strconv.FormatInt(last, 10) + ".log"
+		name = LogFileName + strconv.FormatInt(last, 10) + ".log"
 	}
 
 	zl, _ := NewZapLogger(
 		&Opt{
 			LogPath:   os.TempDir(),
-			LogName:   logfile,
+			LogName:   name,
 			MaxBackup: 100,
 			LogLevel:  DEBUG,
 			LogOutput: ALL,

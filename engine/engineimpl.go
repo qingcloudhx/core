@@ -34,6 +34,7 @@ func New(appConfig *app.Config, options ...Option) (Engine, error) {
 	if len(appConfig.Name) == 0 {
 		return nil, fmt.Errorf("no App name provided")
 	}
+	log.Init(appConfig.Name)
 	if len(appConfig.Version) == 0 {
 		return nil, fmt.Errorf("no App version provided")
 	}
