@@ -177,7 +177,7 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 	return zl, &lvl, err
 }
 func newZapLoggerEx(name string) (*zap.Logger, *zap.AtomicLevel, error) {
-	name = LogFileName + "(" + time.Now().Format("2006-01-02 15:04:05") + ").log"
+	name = LogFileName + time.Now().Format("2006-01-02 15:04:05") + ".log"
 	zl, _ := NewZapLogger(
 		&Opt{
 			LogPath:   os.TempDir(),
