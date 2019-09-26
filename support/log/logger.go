@@ -61,8 +61,8 @@ var (
 	ctxLogging bool
 )
 
-func Init(name string) {
-	configureLogging(name)
+func init() {
+	configureLogging()
 }
 
 func CtxLoggingEnabled() bool {
@@ -104,7 +104,7 @@ func Sync() {
 
 var traceEnabled = false
 
-func configureLogging(name string) {
+func configureLogging() {
 	envLogCtx := os.Getenv(EnvKeyLogCtx)
 	if strings.ToLower(envLogCtx) == "true" {
 		ctxLogging = true
@@ -135,7 +135,7 @@ func configureLogging(name string) {
 		logFormat = FormatJson
 	}
 
-	rootLogger = newZapRootLogger(name, logFormat)
+	rootLogger = newZapRootLogger("flogo", logFormat)
 	SetLogLevel(rootLogger, rootLogLevel)
 }
 

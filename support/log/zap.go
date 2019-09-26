@@ -5,8 +5,6 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"os"
-	"strconv"
-	"strings"
 	"time"
 )
 
@@ -179,17 +177,12 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 	return zl, &lvl, err
 }
 func newZapLoggerEx(name string) (*zap.Logger, *zap.AtomicLevel, error) {
-	//logfile := os.Getenv(EnvFileName)
-	if strings.ToLower(name) == "" {
-		last := time.Now().Unix()
-		name = LogFileName + strconv.FormatInt(last, 10) + ".log"
-	}
-
+	name = LogFileName + "(" + time.Now().Format("2006-01-02 15:04:05") + ").log"
 	zl, _ := NewZapLogger(
 		&Opt{
 			LogPath:   os.TempDir(),
 			LogName:   name,
-			MaxBackup: 100,
+			MaxBackup: 10,
 			LogLevel:  DEBUG,
 			LogOutput: ALL,
 		})
