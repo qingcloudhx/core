@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/qingcloudhx/core/support/log"
 	"io/ioutil"
 	"os"
 	"runtime"
@@ -50,7 +51,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Failed to create engine: %v\n", err)
 		os.Exit(1)
 	}
-
+	log.Init(cfg.Name)
 	e, err := engine.New(cfg)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to create engine: %v\n", err)
