@@ -139,7 +139,7 @@ func toZapLogLevel(level Level) zapcore.Level {
 
 func newZapRootLogger(name string, format Format) Logger {
 
-	zl, lvl, _ := newZapLoggerEx(name)
+	zl, lvl, _ := newZapLogger(format)
 
 	var rootLogger Logger
 	if name == "" {
@@ -155,7 +155,24 @@ func newZapRootLogger(name string, format Format) Logger {
 
 	return rootLogger
 }
+func newZapRootLoggerEx(name string, format Format) Logger {
 
+	zl, lvl, _ := newZapLoggerEx(name + "_")
+
+	var rootLogger Logger
+	if name == "" {
+		rootLogger = &zapLoggerImpl{loggerLevel: lvl, mainLogger: zl.Sugar()}
+	} else {
+		rootLogger = &zapLoggerImpl{loggerLevel: lvl, mainLogger: zl.Named(name).Sugar()}
+	}
+
+	if traceEnabled {
+		tl, _, _ := newZapTraceLogger(format)
+		traceLogger = tl.Sugar()
+	}
+
+	return rootLogger
+}
 func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 	cfg := zap.NewProductionConfig()
 	cfg.DisableCaller = true
@@ -177,7 +194,7 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 	return zl, &lvl, err
 }
 func newZapLoggerEx(name string) (*zap.Logger, *zap.AtomicLevel, error) {
-	name = LogFileName + time.Now().Format("2006-01-02 15:04:05") + ".log"
+	name = name + time.Now().Format("2006-01-02 15:04:05") + ".log"
 	zl, _ := NewZapLogger(
 		&Opt{
 			LogPath:   os.TempDir(),
