@@ -3,7 +3,6 @@ package engine
 import (
 	"encoding/json"
 	"github.com/qingcloudhx/core/data/schema"
-	"github.com/qingcloudhx/core/support/logEx"
 	"io/ioutil"
 	"os"
 
@@ -78,6 +77,6 @@ func LoadAppConfig(flogoJson string, compressed bool) (*app.Config, error) {
 
 	appName = appConfig.Name
 	appVersion = appConfig.Version
-	logEx.Init(appName)
+	//log.Init(appName)
 	return appConfig, nil
 }
