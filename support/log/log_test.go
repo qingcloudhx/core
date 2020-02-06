@@ -1,6 +1,9 @@
 package log
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 /**
 * @Author: hexing
@@ -8,7 +11,18 @@ import "testing"
  */
 
 func TestGetLogerEx(t *testing.T) {
-	Init("hx")
-	GetLogerEx().Infof("hxhxh:%s", "xxx")
+	opt := &Option{
+		LogPath:   "",
+		LogName:   "hexing",
+		LogLevel:  1,
+		MaxSize:   10,
+		MaxBackup: 10,
+	}
+	Init(opt)
+	for {
+		GetLoggerEx().Infof("hxhxh:%s", "xxx")
+		GetLoggerEx().Warnf("hxhxh:%s", "xxx")
+		time.Sleep(2 * time.Second)
+	}
 	SyncEx()
 }

@@ -6,26 +6,41 @@ import "sync"
 * @Author: hexing
 * @Date: 19-9-28 上午11:29
  */
+const tempName = "core"
 
 var (
 	rootLoggerEx Logger
 	once         sync.Once
 )
 
-func Init(name string) {
+type Option struct {
+	LogPath       string `json:"log_path"`
+	LogName       string `json:"log_name"`
+	LogLevel      Level  `json:"log_level"` //1 debug,2 info,3 warn,4 error,5 fatal
+	MaxSize       int    `json:"max_size"`
+	MaxBackup     int    `json:"max_backup"`
+	MaxAge        int    `json:"max_age"`
+	ConsoleFormat bool   `json:"console_format"`
+}
+
+func Init(option *Option) {
 	once.Do(func() {
-		rootLogLevel := DebugLevel
+		//rootLogLevel := DebugLevel
 		logFormat := DefaultLogFormat
-		rootLoggerEx = newZapRootLoggerEx(name, logFormat)
-		SetLogLevel(rootLoggerEx, rootLogLevel)
+		if option == nil {
+			option = &Option{
+				LogName: tempName,
+			}
+		}
+		rootLoggerEx = newZapRootLoggerEx(option, logFormat)
+		//SetLogLevel(rootLoggerEx, rootLogLevel)
 	})
 }
-func GetLogerEx() Logger {
+func GetLoggerEx() Logger {
 	return rootLoggerEx
 }
 func SyncEx() {
 	impl, ok := rootLoggerEx.(*zapLoggerImpl)
-
 	if ok {
 		_ = impl.mainLogger.Sync()
 	}

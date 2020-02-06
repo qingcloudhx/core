@@ -5,6 +5,7 @@ import (
 	"github.com/qingcloudhx/core/app/resource"
 	"github.com/qingcloudhx/core/data"
 	"github.com/qingcloudhx/core/data/schema"
+	"github.com/qingcloudhx/core/support/log"
 	"github.com/qingcloudhx/core/trigger"
 )
 
@@ -23,6 +24,7 @@ type Config struct {
 	Resources  []*resource.Config     `json:"resources,omitempty"`
 	Actions    []*action.Config       `json:"actions,omitempty"`
 	Schemas    map[string]*schema.Def `json:"schemas,omitempty"`
+	Log        *log.Option            `json:"log,omitempty"`
 }
 
 func LoadConfig() *Config {

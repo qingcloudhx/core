@@ -3,19 +3,16 @@ package main
 import (
 	"flag"
 	"fmt"
+	_ "github.com/qingcloudhx/core/data/expression/script"
+	"github.com/qingcloudhx/core/engine"
 	"github.com/qingcloudhx/core/support/log"
 	"io/ioutil"
 	"os"
-	"runtime"
-	"runtime/pprof"
-
-	_ "github.com/qingcloudhx/core/data/expression/script"
-	"github.com/qingcloudhx/core/engine"
 )
 
 var (
-	cpuProfile    = flag.String("cpuprofile", "", "Writes CPU profile to the specified file")
-	memProfile    = flag.String("memprofile", "", "Writes memory profile to the specified file")
+	//cpuProfile    = flag.String("cpuprofile", "", "Writes CPU profile to the specified file")
+	//memProfile    = flag.String("memprofile", "", "Writes memory profile to the specified file")
 	fileJson      = flag.String("conf", "", "app config")
 	cfgJson       string
 	cfgCompressed bool
@@ -24,18 +21,18 @@ var (
 func main() {
 
 	flag.Parse()
-	if *cpuProfile != "" {
-		f, err := os.Create(*cpuProfile)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Failed to create CPU profiling file: %v\n", err)
-			os.Exit(1)
-		}
-		if err = pprof.StartCPUProfile(f); err != nil {
-			fmt.Fprintf(os.Stderr, "Failed to start CPU profiling: %v\n", err)
-			os.Exit(1)
-		}
-		defer pprof.StopCPUProfile()
-	}
+	//if *cpuProfile != "" {
+	//	f, err := os.Create(*cpuProfile)
+	//	if err != nil {
+	//		fmt.Fprintf(os.Stderr, "Failed to create CPU profiling file: %v\n", err)
+	//		os.Exit(1)
+	//	}
+	//	if err = pprof.StartCPUProfile(f); err != nil {
+	//		fmt.Fprintf(os.Stderr, "Failed to start CPU profiling: %v\n", err)
+	//		os.Exit(1)
+	//	}
+	//	defer pprof.StopCPUProfile()
+	//}
 	//os.Setenv("FLOGO_CONFIG_PATH", "/home/code/flowgo/core/examples/engine/flogo.json")
 	if *fileJson != "" {
 		data, err := ioutil.ReadFile(*fileJson)
@@ -51,7 +48,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Failed to create engine: %v\n", err)
 		os.Exit(1)
 	}
-	log.Init(cfg.Name)
+	log.Init(cfg.Log)
 	e, err := engine.New(cfg)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to create engine: %v\n", err)
@@ -60,20 +57,20 @@ func main() {
 
 	code := engine.RunEngine(e)
 
-	if *memProfile != "" {
-		f, err := os.Create(*memProfile)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Failed to create memory profiling file: %v\n", err)
-			os.Exit(1)
-		}
-
-		runtime.GC() // get up-to-date statistics
-		if err := pprof.WriteHeapProfile(f); err != nil {
-			fmt.Fprintf(os.Stderr, "Failed to write memory profiling data: %v", err)
-			os.Exit(1)
-		}
-		_ = f.Close()
-	}
+	//if *memProfile != "" {
+	//	f, err := os.Create(*memProfile)
+	//	if err != nil {
+	//		fmt.Fprintf(os.Stderr, "Failed to create memory profiling file: %v\n", err)
+	//		os.Exit(1)
+	//	}
+	//
+	//	runtime.GC() // get up-to-date statistics
+	//	if err := pprof.WriteHeapProfile(f); err != nil {
+	//		fmt.Fprintf(os.Stderr, "Failed to write memory profiling data: %v", err)
+	//		os.Exit(1)
+	//	}
+	//	_ = f.Close()
+	//}
 
 	os.Exit(code)
 }

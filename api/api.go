@@ -70,8 +70,10 @@ func NewApp() *App {
 
 // NewTrigger adds a new trigger to the application
 func (a *App) NewTrigger(trg trigger.Trigger, settings interface{}) *Trigger {
-
-	var settingsMap map[string]interface{}
+	var (
+		settingsMap map[string]interface{}
+		ref         string
+	)
 
 	if settings != nil {
 		if s, ok := settings.(map[string]interface{}); ok {
@@ -80,8 +82,6 @@ func (a *App) NewTrigger(trg trigger.Trigger, settings interface{}) *Trigger {
 			settingsMap = metadata.StructToMap(settings)
 		}
 	}
-
-	var ref string
 
 	if hr, ok := trg.(support.HasRef); ok {
 		ref = hr.Ref()

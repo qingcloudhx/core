@@ -124,13 +124,15 @@ func (runner *PooledRunner) RunAction(ctx context.Context, act action.Action, in
 		if logger.DebugEnabled() {
 			logger.Debugf("Action '%s' queued", support.GetRef(act))
 		}
-
-		reply := <-actionData.arc
-
-		if logger.DebugEnabled() {
-			logger.Debugf("Action '%s' returned", support.GetRef(act))
+		select {
+		case reply := <-actionData.arc:
+			if logger.DebugEnabled() {
+				logger.Debugf("Action '%s' returned", support.GetRef(act))
+			}
+			return reply.results, reply.err
+		case <-ctx.Done():
+			return nil, errors.New("handle time out")
 		}
-		return reply.results, reply.err
 	}
 
 	//Run rejected

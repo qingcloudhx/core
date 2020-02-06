@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"os"
 )
 
 var traceLogger *zap.SugaredLogger
@@ -154,15 +153,15 @@ func newZapRootLogger(name string, format Format) Logger {
 
 	return rootLogger
 }
-func newZapRootLoggerEx(name string, format Format) Logger {
+func newZapRootLoggerEx(option *Option, format Format) Logger {
 
-	zl, lvl, _ := newZapLoggerEx(name)
+	zl, lvl, _ := newZapLoggerEx(option)
 
 	var rootLogger Logger
-	if name == "" {
+	if option.LogName == "" {
 		rootLogger = &zapLoggerImpl{loggerLevel: lvl, mainLogger: zl.Sugar()}
 	} else {
-		rootLogger = &zapLoggerImpl{loggerLevel: lvl, mainLogger: zl.Named(name).Sugar()}
+		rootLogger = &zapLoggerImpl{loggerLevel: lvl, mainLogger: zl.Named(option.LogName).Sugar()}
 	}
 
 	if traceEnabled {
@@ -175,7 +174,6 @@ func newZapRootLoggerEx(name string, format Format) Logger {
 func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 	cfg := zap.NewProductionConfig()
 	cfg.DisableCaller = true
-
 	eCfg := cfg.EncoderConfig
 	eCfg.TimeKey = "timestamp"
 	eCfg.EncodeTime = zapcore.ISO8601TimeEncoder
@@ -192,14 +190,17 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 
 	return zl, &lvl, err
 }
-func newZapLoggerEx(name string) (*zap.Logger, *zap.AtomicLevel, error) {
+func newZapLoggerEx(option *Option) (*zap.Logger, *zap.AtomicLevel, error) {
 	zl, _ := NewZapLogger(
 		&Opt{
-			LogPath:   os.TempDir(),
-			LogName:   name + ".log",
-			MaxBackup: 10,
-			LogLevel:  DEBUG,
-			LogOutput: ALL,
+			LogPath:       option.LogPath,
+			LogName:       option.LogName + ".log",
+			MaxBackup:     option.MaxBackup,
+			MaxAge:        option.MaxAge,
+			MaxSize:       option.MaxSize,
+			LogLevel:      option.LogLevel,
+			LogOutput:     ALL,
+			ConsoleFormat: option.ConsoleFormat,
 		})
 	lvl := zap.NewAtomicLevel()
 	return zl, &lvl, nil

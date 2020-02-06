@@ -43,13 +43,14 @@ const (
 )
 
 type Opt struct {
-	LogPath   string
-	LogName   string
-	LogLevel  Level
-	MaxSize   int
-	MaxBackup int
-	MaxAge    int
-	LogOutput Output
+	LogPath       string
+	LogName       string
+	LogLevel      Level
+	MaxSize       int
+	MaxBackup     int
+	MaxAge        int
+	LogOutput     Output
+	ConsoleFormat bool
 }
 
 const (
@@ -69,7 +70,11 @@ var (
 )
 
 func NewZapLogger(opt *Opt) (*zap.Logger, io.Writer) {
-	var writer io.Writer
+	var (
+		writer   io.Writer
+		core     zapcore.Core
+		zapLevel zapcore.Level
+	)
 	switch opt.LogOutput {
 	case FILE:
 		writer = newFileWriter(opt)
@@ -80,8 +85,12 @@ func NewZapLogger(opt *Opt) (*zap.Logger, io.Writer) {
 	}
 	encoderConfig := zap.NewProductionEncoderConfig()
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
-	zapLevel := asZapLevel(opt.LogLevel)
-	core := zapcore.NewCore(zapcore.NewConsoleEncoder(encoderConfig), zapcore.AddSync(writer), zapLevel)
+	zapLevel = asZapLevel(opt.LogLevel)
+	if !opt.ConsoleFormat {
+		core = zapcore.NewCore(zapcore.NewConsoleEncoder(encoderConfig), zapcore.AddSync(writer), zapLevel)
+	} else {
+		core = zapcore.NewCore(zapcore.NewJSONEncoder(encoderConfig), zapcore.AddSync(writer), zapLevel)
+	}
 
 	if zapLevel == zapcore.DebugLevel {
 		return zap.New(core, zap.AddCaller()), writer
@@ -90,6 +99,9 @@ func NewZapLogger(opt *Opt) (*zap.Logger, io.Writer) {
 }
 
 func newFileWriter(opt *Opt) io.Writer {
+	if opt.LogPath == "" {
+		opt.LogPath = os.TempDir()
+	}
 	if opt.MaxSize <= 0 {
 		opt.MaxSize = 100
 	}
