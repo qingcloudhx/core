@@ -45,7 +45,7 @@ const (
 type Opt struct {
 	LogPath    string
 	LogName    string
-	LogLevel   Level
+	LogLevel   string
 	MaxSize    int
 	MaxBackup  int
 	MaxAge     int
@@ -85,7 +85,9 @@ func NewZapLogger(opt *Opt) (*zap.Logger, io.Writer) {
 	}
 	encoderConfig := zap.NewProductionEncoderConfig()
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
-	zapLevel = asZapLevel(opt.LogLevel)
+	var l Level
+	l.Unmarshal(opt.LogLevel)
+	zapLevel = asZapLevel(l)
 	if !opt.JsonFormat {
 		core = zapcore.NewCore(zapcore.NewConsoleEncoder(encoderConfig), zapcore.AddSync(writer), zapLevel)
 	} else {
