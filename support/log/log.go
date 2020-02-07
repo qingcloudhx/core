@@ -14,13 +14,13 @@ var (
 )
 
 type Option struct {
-	LogPath       string `json:"logPath"`
-	LogName       string `json:"logName"`
-	LogLevel      Level  `json:"logLevel"` //1 debug,2 info,3 warn,4 error,5 fatal
-	MaxSize       int    `json:"maxSize"`  //日志分割的尺寸 MB
-	MaxBackup     int    `json:"maxBackup"`
-	MaxAge        int    `json:"maxAge"` //分割日志保存的时间 day
-	ConsoleFormat bool   `json:"consoleFormat"`
+	LogPath    string `json:"logPath"`
+	LogName    string `json:"logName"`
+	LogLevel   Level  `json:"logLevel"` //1 debug,2 info,3 warn,4 error,5 fatal
+	MaxSize    int    `json:"maxSize"`  //日志分割的尺寸 MB
+	MaxBackup  int    `json:"maxBackup"`
+	MaxAge     int    `json:"maxAge"` //分割日志保存的时间 day
+	JsonFormat bool   `json:"JsonFormat"`
 }
 
 func Init(option *Option) {

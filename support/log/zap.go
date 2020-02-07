@@ -193,14 +193,14 @@ func newZapLogger(logFormat Format) (*zap.Logger, *zap.AtomicLevel, error) {
 func newZapLoggerEx(option *Option) (*zap.Logger, *zap.AtomicLevel, error) {
 	zl, _ := NewZapLogger(
 		&Opt{
-			LogPath:       option.LogPath,
-			LogName:       option.LogName + ".log",
-			MaxBackup:     option.MaxBackup,
-			MaxAge:        option.MaxAge,
-			MaxSize:       option.MaxSize,
-			LogLevel:      option.LogLevel,
-			LogOutput:     ALL,
-			ConsoleFormat: option.ConsoleFormat,
+			LogPath:    option.LogPath,
+			LogName:    option.LogName + ".log",
+			MaxBackup:  option.MaxBackup,
+			MaxAge:     option.MaxAge,
+			MaxSize:    option.MaxSize,
+			LogLevel:   option.LogLevel,
+			LogOutput:  ALL,
+			JsonFormat: option.JsonFormat,
 		})
 	lvl := zap.NewAtomicLevel()
 	return zl, &lvl, nil
