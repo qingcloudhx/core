@@ -1,6 +1,7 @@
 package log
 
 import (
+	"github.com/qingcloudhx/core/constant"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"
@@ -95,9 +96,9 @@ func NewZapLogger(opt *Opt) (*zap.Logger, io.Writer) {
 	}
 
 	if zapLevel == zapcore.DebugLevel {
-		return zap.New(core, zap.AddCaller()), writer
+		return zap.New(core, zap.Fields(zap.String(constant.CommitLogProperty_Source, constant.CommitLogSource_EdgeWize)), zap.AddCaller()), writer
 	}
-	return zap.New(core), writer
+	return zap.New(core, zap.Fields(zap.String(constant.CommitLogProperty_Source, constant.CommitLogSource_EdgeWize))), writer
 }
 
 func newFileWriter(opt *Opt) io.Writer {
