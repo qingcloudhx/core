@@ -96,9 +96,11 @@ func NewZapLogger(opt *Opt) (*zap.Logger, io.Writer) {
 	}
 
 	if zapLevel == zapcore.DebugLevel {
-		return zap.New(core, zap.Fields(zap.String(constant.CommitLogProperty_Source, constant.CommitLogSource_EdgeWize)), zap.AddCaller()), writer
+		return zap.New(core, zap.Fields(zap.String(constant.CommitLogProperty_Source, constant.CommitLogSource_EdgeWize),
+			zap.String(constant.CommitLogProperty_AppId, opt.LogName)), zap.AddCaller()), writer
 	}
-	return zap.New(core, zap.Fields(zap.String(constant.CommitLogProperty_Source, constant.CommitLogSource_EdgeWize))), writer
+	return zap.New(core, zap.Fields(zap.String(constant.CommitLogProperty_Source, constant.CommitLogSource_EdgeWize),
+		zap.String(constant.CommitLogProperty_AppId, opt.LogName))), writer
 }
 
 func newFileWriter(opt *Opt) io.Writer {
