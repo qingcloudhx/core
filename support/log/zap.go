@@ -194,7 +194,7 @@ func newZapLoggerEx(option *Option) (*zap.Logger, *zap.AtomicLevel, error) {
 	zl, _ := NewZapLogger(
 		&Opt{
 			LogPath:    option.LogPath,
-			LogName:    option.LogName + ".log",
+			LogName:    option.LogName,
 			MaxBackup:  option.MaxBackup,
 			MaxAge:     option.MaxAge,
 			MaxSize:    option.MaxSize,

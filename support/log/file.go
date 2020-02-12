@@ -117,7 +117,7 @@ func newFileWriter(opt *Opt) io.Writer {
 		opt.MaxAge = 28
 	}
 	return &lumberjack.Logger{
-		Filename:   filepath.Join(opt.LogPath, opt.LogName),
+		Filename:   filepath.Join(opt.LogPath, opt.LogName+".log"),
 		MaxSize:    opt.MaxSize,
 		MaxBackups: opt.MaxBackup,
 		MaxAge:     opt.MaxAge,
