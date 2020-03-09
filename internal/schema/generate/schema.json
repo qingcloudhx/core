@@ -1,0 +1,358 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "required": [
+        "name",
+        "type",
+        "version",
+        "description",
+        "appModel",
+        "triggers"
+    ],
+    "properties": {
+        "actions": {
+            "items": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$ref": "#/definitions/action.Config"
+            },
+            "type": "array"
+        },
+        "appModel": {
+            "type": "string"
+        },
+        "channels": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "description": {
+            "type": "string"
+        },
+        "imports": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "log": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$ref": "#/definitions/log.Option"
+        },
+        "name": {
+            "type": "string"
+        },
+        "properties": {
+            "items": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$ref": "#/definitions/data.Attribute"
+            },
+            "type": "array"
+        },
+        "resources": {
+            "items": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$ref": "#/definitions/resource.Config"
+            },
+            "type": "array"
+        },
+        "schemas": {
+            "patternProperties": {
+                ".*": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "$ref": "#/definitions/schema.Def"
+                }
+            },
+            "type": "object"
+        },
+        "triggers": {
+            "items": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$ref": "#/definitions/trigger.Config"
+            },
+            "type": "array"
+        },
+        "type": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "definitions": {
+        ".": {
+            "required": [
+                "name",
+                "type",
+                "version",
+                "description",
+                "appModel",
+                "triggers"
+            ],
+            "properties": {
+                "actions": {
+                    "items": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "$ref": "#/definitions/action.Config"
+                    },
+                    "type": "array"
+                },
+                "appModel": {
+                    "type": "string"
+                },
+                "channels": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "imports": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "log": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "$ref": "#/definitions/log.Option"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "properties": {
+                    "items": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "$ref": "#/definitions/data.Attribute"
+                    },
+                    "type": "array"
+                },
+                "resources": {
+                    "items": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "$ref": "#/definitions/resource.Config"
+                    },
+                    "type": "array"
+                },
+                "schemas": {
+                    "patternProperties": {
+                        ".*": {
+                            "$schema": "http://json-schema.org/draft-07/schema#",
+                            "$ref": "#/definitions/schema.Def"
+                        }
+                    },
+                    "type": "object"
+                },
+                "triggers": {
+                    "items": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "$ref": "#/definitions/trigger.Config"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "action.Config": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "ref": {
+                    "type": "string"
+                },
+                "settings": {
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "data.Attribute": {
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "log.Option": {
+            "required": [
+                "logPath",
+                "logName",
+                "logLevel",
+                "maxSize",
+                "maxBackup",
+                "maxAge",
+                "JsonFormat"
+            ],
+            "properties": {
+                "JsonFormat": {
+                    "type": "boolean"
+                },
+                "logLevel": {
+                    "type": "string"
+                },
+                "logName": {
+                    "type": "string"
+                },
+                "logPath": {
+                    "type": "string"
+                },
+                "maxAge": {
+                    "type": "integer"
+                },
+                "maxBackup": {
+                    "type": "integer"
+                },
+                "maxSize": {
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "resource.Config": {
+            "required": [
+                "id",
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "schema.Def": {
+            "required": [
+                "type",
+                "value"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "trigger.ActionConfig": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "if": {
+                    "type": "string"
+                },
+                "input": {
+                    "type": "object"
+                },
+                "output": {
+                    "type": "object"
+                },
+                "ref": {
+                    "type": "string"
+                },
+                "settings": {
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "trigger.Config": {
+            "required": [
+                "id",
+                "ref",
+                "settings",
+                "handlers",
+                "event"
+            ],
+            "properties": {
+                "event": {
+                    "type": "object"
+                },
+                "handlers": {
+                    "items": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "$ref": "#/definitions/trigger.HandlerConfig"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ref": {
+                    "type": "string"
+                },
+                "settings": {
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "trigger.HandlerConfig": {
+            "required": [
+                "settings",
+                "actions"
+            ],
+            "properties": {
+                "actions": {
+                    "items": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "$ref": "#/definitions/trigger.ActionConfig"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "schemas": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "$ref": "#/definitions/trigger.SchemaConfig"
+                },
+                "settings": {
+                    "type": "object"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "trigger.SchemaConfig": {
+            "properties": {
+                "output": {
+                    "type": "object"
+                },
+                "reply": {
+                    "type": "object"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        }
+    }
+}
